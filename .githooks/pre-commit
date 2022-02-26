@@ -1,0 +1,19 @@
+#!/bin/sh
+FILES=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(ts|svelte)$')
+[ -z "$FILES" ] && exit 0
+
+# Prettify all selected files
+echo "$FILES" | xargs ./node_modules/.bin/prettier --ignore-unknown --write
+# Fix all lint errors
+echo "$FILES" | xargs ./node_modules/.bin/eslint --fix --max-warnings 0
+ESLINT=$?
+
+if [ $ESLINT -eq 0 ]
+  then
+  # Add back the modified/prettified files to staging
+  echo "$FILES" | xargs git add
+  exit 0
+else
+  # Prevent committing when there is an error
+  exit 1
+fi
