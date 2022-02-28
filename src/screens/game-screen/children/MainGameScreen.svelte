@@ -4,6 +4,7 @@
 	import { SCREENS } from "../../../constants/screens";
 	import { useCountdown } from "../../../helpers/use-countdown";
 	import { onMount } from "svelte";
+	import Canvas from "../../../components/Canvas.svelte";
 
 	let remainder: number = RULE.GAME_DURATION;
 
@@ -27,5 +28,6 @@
 </script>
 
 <h1>main game</h1>
+<Canvas />
 <div>{remainder} sec</div>
 <div>{$currentRound}</div>
