@@ -4,9 +4,11 @@
 	import { SCREENS } from "../../../constants/screens";
 	import { useCountdown } from "../../../helpers/use-countdown";
 	import { onMount } from "svelte";
-	import Canvas from "../../../components/Canvas.svelte";
+	import { Canvas } from "../../../classes/canvas";
 
 	let remainder: number = RULE.GAME_DURATION;
+	let element: HTMLElement;
+	let canvas: Canvas;
 
 	const onTick = () => {
 		remainder = remainder - 1;
@@ -24,10 +26,23 @@
 
 	onMount(() => {
 		useCountdown(remainder, onTick, onFinishCountdown);
+		canvas = new Canvas(element);
 	});
 </script>
 
 <h1>main game</h1>
-<Canvas />
-<div>{remainder} sec</div>
+<div class="canvasWrapper">
+	<div bind:this={element} />
+	<div>
+		<div>{remainder} sec</div>
+		<div>some comment</div>
+		<button on:click={() => canvas.clearCanvas()}>clear canvas</button>
+	</div>
+</div>
 <div>{$currentRound}</div>
+
+<style>
+	.canvasWrapper {
+		display: flex;
+	}
+</style>
