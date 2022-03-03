@@ -31,6 +31,7 @@
 </script>
 
 <h1>main game</h1>
+<div>{$currentRound}</div>
 <div class="canvasWrapper">
 	<div bind:this={element} />
 	<div>
@@ -39,7 +40,6 @@
 		<button on:click={() => canvas.clearCanvas()}>clear canvas</button>
 	</div>
 </div>
-<div>{$currentRound}</div>
 
 <style>
 	.canvasWrapper {
