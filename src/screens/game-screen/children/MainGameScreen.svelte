@@ -5,13 +5,19 @@
 	import { useCountdown } from "../../../helpers/use-countdown";
 	import { onMount } from "svelte";
 	import { Canvas } from "../../../classes/canvas";
+	import { ClassifierCallback, classifyDrawing } from "../../../helpers/classify-drawing";
 
 	let remainder: number = RULE.GAME_DURATION;
 	let element: HTMLElement;
 	let canvas: Canvas;
 
-	const onTick = () => {
+	const onGetResult: ClassifierCallback = (e, result) => {
+		console.log(result);
+	};
+
+	const onTick = async () => {
 		remainder = remainder - 1;
+		await classifyDrawing(canvas, onGetResult);
 	};
 
 	const onFinishCountdown = () => {
