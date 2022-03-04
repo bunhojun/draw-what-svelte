@@ -5,19 +5,27 @@
 	import { useCountdown } from "../../../helpers/use-countdown";
 	import { onMount } from "svelte";
 	import { Canvas } from "../../../classes/canvas";
-	import { ClassifierCallback, classifyDrawing } from "../../../helpers/classify-drawing";
+	import {
+		Candidates,
+		ClassifierCallback,
+		classifyDrawing,
+	} from "../../../helpers/classify-drawing";
+	import ScoreDisplay from "../../../components/ScoreDisplay.svelte";
 
 	let remainder: number = RULE.GAME_DURATION;
 	let element: HTMLElement;
 	let canvas: Canvas;
+	let candidates: Candidates = [];
 
 	const onGetResult: ClassifierCallback = (e, result) => {
-		console.log(result);
+		candidates = result.splice(0, RULE.NUM_OF_CANDIDATES);
 	};
 
 	const onTick = async () => {
 		remainder = remainder - 1;
-		await classifyDrawing(canvas, onGetResult);
+		if (remainder % 2 === 0) {
+			await classifyDrawing(canvas, onGetResult);
+		}
 	};
 
 	const onFinishCountdown = () => {
@@ -39,10 +47,10 @@
 <h1>main game</h1>
 <div>{$currentRound}</div>
 <div class="canvasWrapper">
-	<div bind:this={element} />
+	<div bind:this={element} class="canvas" />
 	<div>
 		<div>{remainder} sec</div>
-		<div>some comment</div>
+		<ScoreDisplay {candidates} />
 		<button on:click={() => canvas.clearCanvas()}>clear canvas</button>
 	</div>
 </div>
@@ -50,5 +58,8 @@
 <style>
 	.canvasWrapper {
 		display: flex;
+	}
+	.canvas {
+		margin-right: 10px;
 	}
 </style>
