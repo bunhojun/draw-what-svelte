@@ -1,4 +1,7 @@
 import type { Canvas } from "../classes/canvas";
+// disable ts and lint as ml5 doesn't have any type definitions
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import * as ml5 from "ml5";
 
 export type Candidates = {

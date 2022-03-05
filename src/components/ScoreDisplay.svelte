@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { trimUnderscore } from "../helpers/trim-underscore";
-	export let candidates = [];
+	import type { Candidates } from "../helpers/classify-drawing";
+
+	export let candidates: Candidates = [];
+
+	let trimmedCandidates: Candidates;
 	$: trimmedCandidates = trimUnderscore(candidates);
 </script>
 
