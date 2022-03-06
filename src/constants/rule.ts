@@ -4,3 +4,16 @@ export const RULE = {
 	GAME_MAX_ROUND: 3,
 	NUM_OF_CANDIDATES: 3,
 } as const;
+
+export const SUBJECTS = [
+	"cat",
+	"yoga",
+	"flower",
+	"lion",
+	"beach",
+	"strawberry",
+	"crab",
+	"car",
+	"carrot",
+	"panda",
+] as const;
