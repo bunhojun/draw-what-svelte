@@ -28,8 +28,9 @@
 		const currentCanvas = element.children[0] as HTMLCanvasElement;
 		const newImage = await createImageBitmap(currentCanvas);
 		const newItem: GalleryItem = {
+			subject: $currentSubject,
 			imageBitmap: newImage,
-			score: thisGameResult?.confidence || 0,
+			score: Math.round(thisGameResult?.confidence * 100) || 0,
 		};
 		galleryItems.update((items) => [...items, newItem]);
 	};

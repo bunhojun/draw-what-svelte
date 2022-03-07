@@ -18,4 +18,7 @@
 		height: 100px;
 		background-color: #ffc0cb;
 	}
+	:global(li) {
+		list-style: none;
+	}
 </style>
