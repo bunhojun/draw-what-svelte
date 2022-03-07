@@ -3,6 +3,7 @@ import { SCREENS } from "../../../constants/screens";
 import { SUBJECTS } from "../../../constants/rule";
 
 export type GalleryItem = {
+	subject: string;
 	imageBitmap: ImageBitmap;
 	score: number;
 };
