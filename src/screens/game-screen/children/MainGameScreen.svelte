@@ -8,7 +8,7 @@
 		galleryItems,
 	} from "../stores/stores";
 	import { SCREENS } from "../../../constants/screens";
-	import { useCountdown } from "../../../helpers/use-countdown";
+	import { startCountdownOnMount } from "../../../helpers/start-countdown-on-mount";
 	import { onMount } from "svelte";
 	import { Canvas } from "../../../classes/canvas";
 	import {
@@ -52,7 +52,7 @@
 			currentRound.update((round) => ++round);
 		};
 		remainder = RULE.TRANSITION_DURATION;
-		useCountdown(remainder, onSummaryTick, onSummaryFinish);
+		startCountdownOnMount(remainder, onSummaryTick, onSummaryFinish);
 	};
 
 	const startGameCountdown = () => {
@@ -67,11 +67,11 @@
 			startSummaryCountdown();
 		};
 
-		useCountdown(remainder, onTick, onFinishCountdown);
+		startCountdownOnMount(remainder, onTick, onFinishCountdown);
 	};
 
+	startGameCountdown();
 	onMount(() => {
-		startGameCountdown();
 		canvas = new Canvas(element);
 	});
 </script>
