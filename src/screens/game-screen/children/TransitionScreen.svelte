@@ -2,8 +2,7 @@
 	import { RULE } from "../../../constants/rule";
 	import { currentRound, currentScreen, currentSubject } from "../stores/stores";
 	import { SCREENS } from "../../../constants/screens";
-	import { onMount } from "svelte";
-	import { useCountdown } from "../../../helpers/use-countdown";
+	import { startCountdownOnMount } from "../../../helpers/start-countdown-on-mount";
 
 	let currentRemainder: number = RULE.TRANSITION_DURATION;
 
@@ -15,9 +14,7 @@
 		currentScreen.set(SCREENS.MAIN_GAME);
 	};
 
-	onMount(() => {
-		useCountdown(RULE.TRANSITION_DURATION, onTick, onFinishCountDown);
-	});
+	startCountdownOnMount(RULE.TRANSITION_DURATION, onTick, onFinishCountDown);
 </script>
 
 <h1>
