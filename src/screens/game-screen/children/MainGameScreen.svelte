@@ -8,8 +8,8 @@
 		galleryItems,
 	} from "../stores/stores";
 	import { SCREENS } from "../../../constants/screens";
-	import { startCountdownOnMount } from "../../../helpers/start-countdown-on-mount";
-	import { onMount } from "svelte";
+	import { Interval, startCountdown } from "../../../helpers/start-countdown";
+	import { onDestroy, onMount } from "svelte";
 	import { Canvas } from "../../../classes/canvas";
 	import {
 		Candidates,
@@ -22,6 +22,7 @@
 	let element: HTMLElement;
 	let canvas: Canvas;
 	let candidates: Candidates = [];
+	let interval: Interval;
 
 	const onGetFinalResult: ClassifierCallback = async (e, result) => {
 		const thisGameResult = result.find(({ label }) => label === $currentSubject);
@@ -52,7 +53,7 @@
 			currentRound.update((round) => ++round);
 		};
 		remainder = RULE.TRANSITION_DURATION;
-		startCountdownOnMount(remainder, onSummaryTick, onSummaryFinish);
+		interval = startCountdown(remainder, onSummaryTick, onSummaryFinish).interval;
 	};
 
 	const startGameCountdown = () => {
@@ -67,12 +68,18 @@
 			startSummaryCountdown();
 		};
 
-		startCountdownOnMount(remainder, onTick, onFinishCountdown);
+		interval = startCountdown(remainder, onTick, onFinishCountdown).interval;
 	};
 
-	startGameCountdown();
 	onMount(() => {
+		startGameCountdown();
 		canvas = new Canvas(element);
+	});
+
+	onDestroy(() => {
+		if (interval) {
+			clearInterval(interval);
+		}
 	});
 </script>
 
