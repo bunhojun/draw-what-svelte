@@ -1,6 +1,6 @@
 <script lang="ts">
 	import GameScreen from "./screens/game-screen/GameScreen.svelte";
-	import HomeScreen from "./screens/HomeScreen.svelte";
+	import HomeScreen from "./screens/HomeScreen/HomeScreen.svelte";
 	import { isGameStarted } from "./stores/stores";
 </script>
 

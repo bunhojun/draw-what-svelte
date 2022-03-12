@@ -1,11 +1,13 @@
 <script lang="ts">
-	import { galleryItems } from "../stores/stores";
-	import GalleryCanvas from "../../../components/GalleryCanvas.svelte";
+	import GalleryCanvas from "../../../../components/GalleryCanvas.svelte";
+	import type { GalleryItem } from "../../stores/stores";
+
+	export let galleryItems: GalleryItem[] = [];
 </script>
 
 <h1>gallery</h1>
 <ul class="gallery">
-	{#each $galleryItems as { subject, score, imageBitmap }}
+	{#each galleryItems as { subject, score, imageBitmap }}
 		<li class="galleryItems">
 			<span>{subject}</span>
 			<GalleryCanvas {imageBitmap} />
