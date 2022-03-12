@@ -9,9 +9,11 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "eslint": "npx eslint src/**/*.{ts,svelte} --fix",
+    "build-storybook": "build-storybook",
     "prettier": "prettier --write src/**/*.{ts,svelte} --ignore-unknown",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "jest src",
+    "test:watch": "yarn test -- --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
@@ -21,6 +23,7 @@
     "@storybook/addon-svelte-csf": "^1.1.0",
     "@storybook/svelte": "^6.4.19",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
+    "@testing-library/jest-dom": "^5.16.2",
     "@tsconfig/svelte": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
@@ -30,12 +33,15 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-storybook": "^0.5.7",
     "eslint-plugin-svelte3": "^3.2.1",
+    "jest": "^27.5.1",
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.5.0",
     "svelte": "^3.46.4",
     "svelte-check": "^2.2.6",
+    "svelte-jester": "^2.3.2",
+    "ts-jest": "^27.1.3",
     "svelte-loader": "^3.1.2",
-    "svelte-preprocess": "^4.10.1",
+    "svelte-preprocess": "^4.10.4",
     "tslib": "^2.3.1",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
@@ -44,5 +50,20 @@
     "@types/p5": "^1.4.1",
     "ml5": "^0.10.3",
     "p5": "^1.4.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.svelte$": ["svelte-jester","svelte-jester", {
+        "preprocess": true
+      }],
+      "^.+\\.ts$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "svelte"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ]
   }
 }
