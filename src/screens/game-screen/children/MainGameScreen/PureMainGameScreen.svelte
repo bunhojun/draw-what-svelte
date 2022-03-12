@@ -1,39 +1,37 @@
 <script lang="ts">
-	import { RULE } from "../../../constants/rule";
-	import {
-		currentRound,
-		currentScreen,
-		currentSubject,
-		GalleryItem,
-		galleryItems,
-	} from "../stores/stores";
-	import { SCREENS } from "../../../constants/screens";
-	import { Interval, startCountdown } from "../../../helpers/start-countdown";
+	import { RULE } from "../../../../constants/rule";
+	import { Interval, startCountdown } from "../../../../helpers/start-countdown";
 	import { onDestroy, onMount } from "svelte";
-	import { Canvas } from "../../../classes/canvas";
+	import { Canvas } from "../../../../classes/canvas";
 	import {
 		Candidates,
 		ClassifierCallback,
 		classifyDrawing,
-	} from "../../../helpers/classify-drawing";
-	import ScoreDisplay from "../../../components/ScoreDisplay.svelte";
+	} from "../../../../helpers/classify-drawing";
+	import ScoreDisplay from "../../../../components/ScoreDisplay.svelte";
+	import { CurrentRound, CurrentSubject, GalleryItem } from "../../stores/stores";
 
-	let remainder: number = RULE.GAME_DURATION;
+	export let updateGalleryItems: (newItem: GalleryItem) => void;
+	export let onSummaryFinish: () => void;
+	export let currentRound: CurrentRound;
+	export let currentSubject: CurrentSubject;
+
 	let element: HTMLElement;
+	let remainder: number = RULE.GAME_DURATION;
 	let canvas: Canvas;
 	let candidates: Candidates = [];
 	let interval: Interval;
 
 	const onGetFinalResult: ClassifierCallback = async (e, result) => {
-		const thisGameResult = result.find(({ label }) => label === $currentSubject);
+		const thisGameResult = result.find(({ label }) => label === currentSubject);
 		const currentCanvas = element.children[0] as HTMLCanvasElement;
 		const newImage = await createImageBitmap(currentCanvas);
 		const newItem: GalleryItem = {
-			subject: $currentSubject,
+			subject: currentSubject,
 			imageBitmap: newImage,
 			score: Math.round(thisGameResult?.confidence * 100) || 0,
 		};
-		galleryItems.update((items) => [...items, newItem]);
+		updateGalleryItems(newItem);
 	};
 
 	const onGetResult: ClassifierCallback = (e, result) => {
@@ -44,14 +42,7 @@
 		const onSummaryTick = () => {
 			remainder = remainder - 1;
 		};
-		const onSummaryFinish = () => {
-			if ($currentRound === RULE.GAME_MAX_ROUND) {
-				currentScreen.set(SCREENS.GALLERY);
-				return;
-			}
-			currentScreen.set(SCREENS.TRANSITION);
-			currentRound.update((round) => ++round);
-		};
+
 		remainder = RULE.TRANSITION_DURATION;
 		interval = startCountdown(remainder, onSummaryTick, onSummaryFinish).interval;
 	};
@@ -84,8 +75,8 @@
 </script>
 
 <h1>main game</h1>
-<div>{$currentRound}</div>
-<h1>draw {$currentSubject}</h1>
+<div>{currentRound}</div>
+<h1>draw {currentSubject}</h1>
 <div class="canvasWrapper">
 	<div bind:this={element} class="canvas" />
 	<div>

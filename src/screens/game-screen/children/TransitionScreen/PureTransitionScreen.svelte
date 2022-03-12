@@ -1,19 +1,18 @@
 <script lang="ts">
-	import { RULE } from "../../../constants/rule";
-	import { currentRound, currentScreen, currentSubject } from "../stores/stores";
-	import { SCREENS } from "../../../constants/screens";
-	import { Interval, startCountdown } from "../../../helpers/start-countdown";
+	import { RULE } from "../../../../constants/rule";
+	import { Interval, startCountdown } from "../../../../helpers/start-countdown";
 	import { onDestroy, onMount } from "svelte";
+	import { CurrentSubject, CurrentRound } from "../../stores/stores";
+
+	export let onFinishCountDown: () => void;
+	export let currentSubject: CurrentSubject;
+	export let currentRound: CurrentRound;
 
 	let currentRemainder: number = RULE.TRANSITION_DURATION;
 	let interval: Interval;
 
 	const onTick = () => {
 		currentRemainder = currentRemainder - 1;
-	};
-
-	const onFinishCountDown = () => {
-		currentScreen.set(SCREENS.MAIN_GAME);
 	};
 
 	onMount(() => {
@@ -28,11 +27,11 @@
 </script>
 
 <h1>
-	draw {$currentSubject}
+	draw {currentSubject}
 </h1>
 <div>
 	{currentRemainder} sec
 </div>
 <div>
-	{$currentRound}
+	{currentRound}
 </div>
