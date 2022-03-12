@@ -15,8 +15,9 @@
 <style>
 	:global(body) {
 		margin: 0;
-		height: 100px;
-		background-color: #ffc0cb;
+	}
+	:global(main) {
+		height: 100vh;
 	}
 	:global(li) {
 		list-style: none;
