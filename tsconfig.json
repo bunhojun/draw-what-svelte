@@ -1,7 +1,6 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
   "compilerOptions": {
-    // for storybook, may change later
     "target": "es6",
     "useDefineForClassFields": true,
     "module": "esnext",
