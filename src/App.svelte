@@ -4,20 +4,15 @@
 	import { isGameStarted } from "./stores/stores";
 </script>
 
-<main>
-	{#if $isGameStarted}
-		<GameScreen />
-	{:else}
-		<HomeScreen />
-	{/if}
-</main>
+{#if $isGameStarted}
+	<GameScreen />
+{:else}
+	<HomeScreen />
+{/if}
 
 <style>
 	:global(body) {
 		margin: 0;
-	}
-	:global(main) {
-		height: 100vh;
 	}
 	:global(li) {
 		list-style: none;
