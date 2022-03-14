@@ -7,13 +7,21 @@
 	{#if withDefaultHeader}
 		<Header />
 	{/if}
-	<slot />
+	<main class="content">
+		<div>
+			<slot />
+		</div>
+	</main>
 </div>
 
 <style>
 	.screenTemplate {
-		height: 100%;
+		height: 100vh;
 		background-color: #ffc0cb;
+	}
+	.content {
+		display: flex;
+		justify-content: center;
 	}
 	:global(h1) {
 		margin: 0;
