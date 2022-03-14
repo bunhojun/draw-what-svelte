@@ -3,6 +3,7 @@
 	import { Interval, startCountdown } from "../../../../helpers/start-countdown";
 	import { onDestroy, onMount } from "svelte";
 	import { CurrentSubject, CurrentRound } from "../../stores/stores";
+	import ScreenTemplate from "../../../../components/ScreenTemplate.svelte";
 
 	export let onFinishCountDown: () => void;
 	export let currentSubject: CurrentSubject;
@@ -26,12 +27,14 @@
 	});
 </script>
 
-<h1>
-	draw {currentSubject}
-</h1>
-<div>
-	{currentRemainder} sec
-</div>
-<div>
-	{currentRound}
-</div>
+<ScreenTemplate withDefaultHeader>
+	<h1>
+		draw {currentSubject}
+	</h1>
+	<div>
+		{currentRemainder} sec
+	</div>
+	<div>
+		{currentRound}
+	</div>
+</ScreenTemplate>

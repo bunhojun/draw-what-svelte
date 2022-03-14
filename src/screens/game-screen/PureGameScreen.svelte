@@ -1,6 +1,5 @@
 <script lang="ts">
 	import TransitionScreen from "./children/TransitionScreen/TransitionScreen.svelte";
-	import Header from "../../components/Header.svelte";
 	import { SCREENS } from "../../constants/screens";
 	import MainGame from "./children/MainGameScreen/MainGameScreen.svelte";
 	import GalleryScreen from "./children/GalleryScreen/GalleryScreen.svelte";
@@ -9,7 +8,6 @@
 	export let currentScreen: CurrentScreen;
 </script>
 
-<Header />
 {#if currentScreen === SCREENS.TRANSITION}
 	<TransitionScreen />
 {:else if currentScreen === SCREENS.MAIN_GAME}

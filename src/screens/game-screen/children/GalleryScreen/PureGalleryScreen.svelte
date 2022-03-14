@@ -1,20 +1,23 @@
 <script lang="ts">
 	import GalleryCanvas from "../../../../components/GalleryCanvas.svelte";
 	import type { GalleryItem } from "../../stores/stores";
+	import ScreenTemplate from "../../../../components/ScreenTemplate.svelte";
 
 	export let galleryItems: GalleryItem[] = [];
 </script>
 
-<h1>gallery</h1>
-<ul class="gallery">
-	{#each galleryItems as { subject, score, imageBitmap }}
-		<li class="galleryItems">
-			<span>{subject}</span>
-			<GalleryCanvas {imageBitmap} />
-			<span>confidence: {score} %</span>
-		</li>
-	{/each}
-</ul>
+<ScreenTemplate withDefaultHeader>
+	<h1>gallery</h1>
+	<ul class="gallery">
+		{#each galleryItems as { subject, score, imageBitmap }}
+			<li class="galleryItems">
+				<span>{subject}</span>
+				<GalleryCanvas {imageBitmap} />
+				<span>confidence: {score} %</span>
+			</li>
+		{/each}
+	</ul>
+</ScreenTemplate>
 
 <style>
 	.gallery {

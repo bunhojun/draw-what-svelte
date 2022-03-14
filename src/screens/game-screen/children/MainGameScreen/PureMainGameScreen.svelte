@@ -10,6 +10,7 @@
 	} from "../../../../helpers/classify-drawing";
 	import ScoreDisplay from "../../../../components/ScoreDisplay.svelte";
 	import { CurrentRound, CurrentSubject, GalleryItem } from "../../stores/stores";
+	import ScreenTemplate from "../../../../components/ScreenTemplate.svelte";
 
 	export let updateGalleryItems: (newItem: GalleryItem) => void;
 	export let onSummaryFinish: () => void;
@@ -74,17 +75,19 @@
 	});
 </script>
 
-<h1>main game</h1>
-<div>{currentRound}</div>
-<h1>draw {currentSubject}</h1>
-<div class="canvasWrapper">
-	<div bind:this={element} class="canvas" />
-	<div>
-		<div>{remainder} sec</div>
-		<ScoreDisplay {candidates} />
-		<button on:click={() => canvas.clearCanvas()}>clear canvas</button>
+<ScreenTemplate withDefaultHeader>
+	<h1>main game</h1>
+	<div>{currentRound}</div>
+	<h1>draw {currentSubject}</h1>
+	<div class="canvasWrapper">
+		<div bind:this={element} class="canvas" />
+		<div>
+			<div>{remainder} sec</div>
+			<ScoreDisplay {candidates} />
+			<button on:click={() => canvas.clearCanvas()}>clear canvas</button>
+		</div>
 	</div>
-</div>
+</ScreenTemplate>
 
 <style>
 	.canvasWrapper {
