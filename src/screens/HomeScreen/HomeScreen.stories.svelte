@@ -11,7 +11,7 @@
 	</div>
 </Template>
 
-<Story name="Home" args={{ onClickStart: () => null }} />
+<Story name="Home" args={{ onClickStart: () => alert("clicked start") }} />
 
 <style>
 	.template {

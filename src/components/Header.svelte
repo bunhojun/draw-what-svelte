@@ -6,6 +6,13 @@
 	};
 </script>
 
-<header>
+<header class="header">
 	<button on:click={onClickLogo}>Draw What?</button>
 </header>
+
+<style>
+	.header {
+		position: absolute;
+		top: 0;
+	}
+</style>

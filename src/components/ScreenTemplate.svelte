@@ -18,12 +18,12 @@
 	.screenTemplate {
 		height: 100vh;
 		background-color: #ffc0cb;
+		position: relative;
 	}
 	.content {
+		height: 100%;
 		display: flex;
 		justify-content: center;
-	}
-	:global(h1) {
-		margin: 0;
+		align-items: center;
 	}
 </style>
