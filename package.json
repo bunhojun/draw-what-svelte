@@ -24,6 +24,7 @@
     "@storybook/svelte": "^6.4.19",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
     "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/svelte": "^3.1.0",
     "@tsconfig/svelte": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
@@ -53,17 +54,22 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.svelte$": ["svelte-jester","svelte-jester", {
-        "preprocess": true
-      }],
+      "^.+\\.svelte$": [
+        "svelte-jester",
+        {
+          "preprocess": true
+        }
+      ],
       "^.+\\.ts$": "ts-jest"
     },
     "moduleFileExtensions": [
+      "js",
       "ts",
       "svelte"
     ],
     "setupFilesAfterEnv": [
       "@testing-library/jest-dom/extend-expect"
-    ]
+    ],
+    "testEnvironment": "jsdom"
   }
 }
