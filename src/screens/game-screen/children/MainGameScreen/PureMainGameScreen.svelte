@@ -30,7 +30,7 @@
 		const newItem: GalleryItem = {
 			subject: currentSubject,
 			imageBitmap: newImage,
-			score: Math.round(thisGameResult?.confidence * 100) || 0,
+			score: (thisGameResult && Math.round(thisGameResult.confidence * 100)) || 0,
 		};
 		updateGalleryItems(newItem);
 	};

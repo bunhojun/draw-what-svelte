@@ -4,6 +4,7 @@
 	import { onDestroy, onMount } from "svelte";
 	import { CurrentSubject, CurrentRound } from "../../stores/stores";
 	import ScreenTemplate from "../../../../components/ScreenTemplate.svelte";
+	import { TEST_ID } from "../../../../constants/test-id";
 
 	export let onFinishCountDown: () => void;
 	export let currentSubject: CurrentSubject;
@@ -27,7 +28,7 @@
 	});
 </script>
 
-<ScreenTemplate withDefaultHeader>
+<ScreenTemplate withDefaultHeader screenTestId={TEST_ID.TransitionScreen}>
 	<h1>
 		draw {currentSubject}
 	</h1>

@@ -1,9 +1,10 @@
 <script lang="ts">
 	import Header from "./Header.svelte";
 	export let withDefaultHeader: boolean;
+	export let screenTestId;
 </script>
 
-<div class="screenTemplate">
+<div class="screenTemplate" data-testid={screenTestId}>
 	{#if withDefaultHeader}
 		<Header />
 	{/if}
