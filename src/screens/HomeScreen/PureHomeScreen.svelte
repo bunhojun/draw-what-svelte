@@ -1,10 +1,11 @@
 <script lang="ts">
 	import ScreenTemplate from "../../components/ScreenTemplate.svelte";
+	import { TEST_ID } from "../../constants/test-id";
 
 	export let onClickStart: () => void;
 </script>
 
 <ScreenTemplate>
 	<h1>Draw What?</h1>
-	<button on:click={onClickStart}>start game</button>
+	<button on:click={onClickStart} data-testid={TEST_ID.StartButton}>start game</button>
 </ScreenTemplate>
