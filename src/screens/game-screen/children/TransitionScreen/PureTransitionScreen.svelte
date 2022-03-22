@@ -29,13 +29,21 @@
 </script>
 
 <ScreenTemplate withDefaultHeader screenTestId={TEST_ID.TransitionScreen}>
-	<h1>
-		draw {currentSubject}
-	</h1>
-	<div>
-		{currentRemainder} sec
-	</div>
-	<div>
-		{currentRound}
+	<div class="transition">
+		<h1>
+			draw {currentSubject}
+		</h1>
+		<div>
+			{currentRemainder} sec
+		</div>
+		<div>
+			{currentRound} / {RULE.GAME_MAX_ROUND}
+		</div>
 	</div>
 </ScreenTemplate>
+
+<style>
+	.transition {
+		text-align: center;
+	}
+</style>

@@ -9,12 +9,11 @@
 		classifyDrawing,
 	} from "../../../../helpers/classify-drawing";
 	import ScoreDisplay from "../../../../components/ScoreDisplay.svelte";
-	import { CurrentRound, CurrentSubject, GalleryItem } from "../../stores/stores";
+	import { CurrentSubject, GalleryItem } from "../../stores/stores";
 	import ScreenTemplate from "../../../../components/ScreenTemplate.svelte";
 
 	export let updateGalleryItems: (newItem: GalleryItem) => void;
 	export let onSummaryFinish: () => void;
-	export let currentRound: CurrentRound;
 	export let currentSubject: CurrentSubject;
 
 	let element: HTMLElement;
@@ -76,8 +75,6 @@
 </script>
 
 <ScreenTemplate withDefaultHeader>
-	<h1>main game</h1>
-	<div>{currentRound}</div>
 	<h1>draw {currentSubject}</h1>
 	<div class="canvasWrapper">
 		<div bind:this={element} class="canvas" />

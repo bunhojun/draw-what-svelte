@@ -24,9 +24,4 @@
 	};
 </script>
 
-<PureMainGameScreen
-	{updateGalleryItems}
-	{onSummaryFinish}
-	currentRound={$currentRound}
-	currentSubject={$currentSubject}
-/>
+<PureMainGameScreen {updateGalleryItems} {onSummaryFinish} currentSubject={$currentSubject} />

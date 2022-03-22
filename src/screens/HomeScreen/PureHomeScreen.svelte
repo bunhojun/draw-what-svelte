@@ -6,6 +6,14 @@
 </script>
 
 <ScreenTemplate>
-	<h1>Draw What?</h1>
-	<button on:click={onClickStart} data-testid={TEST_ID.StartButton}>start game</button>
+	<div class="home">
+		<h1>Draw What?</h1>
+		<button on:click={onClickStart} data-testid={TEST_ID.StartButton}>start game</button>
+	</div>
 </ScreenTemplate>
+
+<style>
+	.home {
+		text-align: center;
+	}
+</style>

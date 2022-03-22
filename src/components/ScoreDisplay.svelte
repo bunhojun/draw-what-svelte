@@ -23,9 +23,6 @@
 </div>
 
 <style>
-	li {
-		list-style: none;
-	}
 	.scoreDisplay {
 		height: 150px;
 		width: 300px;

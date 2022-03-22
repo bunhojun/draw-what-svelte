@@ -7,12 +7,16 @@
 </script>
 
 <header class="header">
-	<button on:click={onClickLogo}>Draw What?</button>
+	<a href="/" on:click|preventDefault={onClickLogo}> Draw What? </a>
 </header>
 
 <style>
 	.header {
 		position: absolute;
 		top: 0;
+	}
+	a {
+		color: #000;
+		text-decoration: none;
 	}
 </style>
