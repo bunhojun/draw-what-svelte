@@ -11,6 +11,7 @@
 	import ScoreDisplay from "../../../../components/ScoreDisplay.svelte";
 	import { CurrentSubject, GalleryItem } from "../../stores/stores";
 	import ScreenTemplate from "../../../../components/ScreenTemplate.svelte";
+	import Button from "../../../../components/Button/Button.svelte";
 
 	export let updateGalleryItems: (newItem: GalleryItem) => void;
 	export let onSummaryFinish: () => void;
@@ -81,7 +82,7 @@
 		<div>
 			<div>{remainder} sec</div>
 			<ScoreDisplay {candidates} />
-			<button on:click={() => canvas.clearCanvas()}>clear canvas</button>
+			<Button onClick={() => canvas.clearCanvas()}>clear canvas</Button>
 		</div>
 	</div>
 </ScreenTemplate>

@@ -27,5 +27,6 @@
 		height: 150px;
 		width: 300px;
 		background-color: #fff;
+		margin-bottom: 10px;
 	}
 </style>

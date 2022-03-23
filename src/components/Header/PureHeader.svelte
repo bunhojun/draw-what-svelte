@@ -1,9 +1,5 @@
 <script lang="ts">
-	import { isGameStarted } from "../stores/stores";
-
-	const onClickLogo = () => {
-		isGameStarted.set(false);
-	};
+	export let onClickLogo;
 </script>
 
 <header class="header">
