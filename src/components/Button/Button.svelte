@@ -18,4 +18,8 @@
 		cursor: pointer;
 		width: 100%;
 	}
+	button:active {
+		border: red 1px solid;
+		color: red;
+	}
 </style>

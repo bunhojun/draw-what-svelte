@@ -1,6 +1,6 @@
-name: on_pull_request
+name: on_push
 
-on: pull_request
+on: push
 
 jobs:
   chromatic-deployment:
