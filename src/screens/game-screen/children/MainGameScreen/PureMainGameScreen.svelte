@@ -8,10 +8,9 @@
 		ClassifierCallback,
 		classifyDrawing,
 	} from "../../../../helpers/classify-drawing";
-	import ScoreDisplay from "../../../../components/ScoreDisplay.svelte";
 	import { CurrentSubject, GalleryItem } from "../../stores/stores";
 	import ScreenTemplate from "../../../../components/ScreenTemplate.svelte";
-	import Button from "../../../../components/Button/Button.svelte";
+	import GameInfoBox from "../../../../components/GameInfoBox.svelte";
 
 	export let updateGalleryItems: (newItem: GalleryItem) => void;
 	export let onSummaryFinish: () => void;
@@ -77,21 +76,18 @@
 
 <ScreenTemplate withDefaultHeader>
 	<h1>draw {currentSubject}</h1>
-	<div class="canvasWrapper">
+	<div class="gameWrapper">
 		<div bind:this={element} class="canvas" />
-		<div>
-			<div>{remainder} sec</div>
-			<ScoreDisplay {candidates} />
-			<Button onClick={() => canvas.clearCanvas()}>clear canvas</Button>
-		</div>
+		<GameInfoBox {remainder} {canvas} {currentSubject} {candidates} />
 	</div>
 </ScreenTemplate>
 
 <style>
-	.canvasWrapper {
+	.gameWrapper {
 		display: flex;
 	}
 	.canvas {
 		margin-right: 10px;
+		height: 560px;
 	}
 </style>

@@ -10,7 +10,7 @@
 <style>
 	button {
 		display: inline-block;
-		font-size: 20px;
+		font-size: 25px;
 		padding: 5px 10px;
 		border: #000 1px solid;
 		border-radius: 2px;
