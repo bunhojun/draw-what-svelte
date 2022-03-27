@@ -10,6 +10,7 @@
 	.header {
 		position: absolute;
 		top: 0;
+		padding: 5px;
 	}
 	a {
 		color: #000;

@@ -11,15 +11,14 @@
 	button {
 		display: inline-block;
 		font-size: 25px;
-		padding: 5px 10px;
+		padding: 10px 0;
+		border-radius: 4px;
 		border: #000 1px solid;
-		border-radius: 2px;
 		background: transparent;
 		cursor: pointer;
 		width: 100%;
 	}
 	button:active {
-		border: red 1px solid;
-		color: red;
+		background-color: #fff;
 	}
 </style>

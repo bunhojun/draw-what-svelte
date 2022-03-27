@@ -29,6 +29,8 @@
 		justify-content: center;
 		align-items: center;
 		padding: 0 30px;
+		border: 1px solid #000;
+		border-radius: 4px;
 	}
 	ul {
 		width: 100%;

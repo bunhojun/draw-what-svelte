@@ -24,6 +24,7 @@
 	.template {
 		height: 100vh;
 		background-color: #ffc0cb;
+		padding: 10px;
 	}
 	.buttonContainer {
 		width: 300px;
