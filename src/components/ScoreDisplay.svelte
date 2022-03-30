@@ -12,10 +12,8 @@
 	{#if trimmedCandidates.length > 0}
 		<ul>
 			{#each trimmedCandidates as { label, confidence }}
-				<li>
-					<div>
-						<span>{label}</span> <span>{Math.round(confidence * 100)} %</span>
-					</div>
+				<li class="confidence">
+					<span>{label}</span> <span>{Math.round(confidence * 100)} %</span>
 				</li>
 			{/each}
 		</ul>
@@ -23,12 +21,23 @@
 </div>
 
 <style>
-	li {
-		list-style: none;
-	}
 	.scoreDisplay {
-		height: 150px;
+		height: 400px;
 		width: 300px;
 		background-color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0 30px;
+		border: 3px solid #000;
+		border-radius: 6px;
+	}
+	ul {
+		width: 100%;
+	}
+	.confidence {
+		font-size: 25px;
+		display: flex;
+		justify-content: space-between;
 	}
 </style>

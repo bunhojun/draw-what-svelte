@@ -19,3 +19,9 @@
 </script>
 
 <canvas bind:this={canvas} width={canvasSize} height={canvasSize} />
+
+<style>
+	canvas {
+		border: 3px solid #000;
+	}
+</style>

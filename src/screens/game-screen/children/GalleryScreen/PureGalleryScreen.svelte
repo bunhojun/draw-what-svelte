@@ -24,7 +24,7 @@
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		max-width: 1200px;
+		width: 1200px;
 	}
 	.galleryItems {
 		margin-top: 15px;

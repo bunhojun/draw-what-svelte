@@ -17,7 +17,6 @@
 		updateGalleryItems: () => null,
 		onSummaryFinish: () => null,
 		currentSubject: "cat",
-		currentRound: 1,
 	}}
 />
 
