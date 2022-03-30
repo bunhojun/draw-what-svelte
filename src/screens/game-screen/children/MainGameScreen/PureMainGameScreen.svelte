@@ -89,6 +89,6 @@
 	.canvas {
 		margin-right: 10px;
 		height: 560px;
-		border: 1px solid #000;
+		border: 3px solid #000;
 	}
 </style>

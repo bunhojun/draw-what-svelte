@@ -12,8 +12,8 @@
 		display: inline-block;
 		font-size: 25px;
 		padding: 10px 0;
-		border-radius: 4px;
-		border: #000 1px solid;
+		border-radius: 6px;
+		border: #000 3px solid;
 		background: transparent;
 		cursor: pointer;
 		width: 100%;

@@ -29,8 +29,8 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border: 1px solid #000;
-		border-radius: 4px;
+		border: 3px solid #000;
+		border-radius: 5px;
 	}
 	.remainder {
 		font-size: 20px;

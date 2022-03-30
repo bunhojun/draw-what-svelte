@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Header from "./Header/Header.svelte";
-	export let withDefaultHeader: boolean;
+	export let withDefaultHeader = false;
 	export let screenTestId;
 </script>
 
