@@ -21,7 +21,8 @@ export const MainGameScreen = Template.bind({});
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 MainGameScreen.parameters = {
-	chromatic: { delay: 3000 },
+	// disable snapshot since this test requires timeout, which makes the result of test on Chromatic unstable
+	chromatic: { disableSnapshot: true },
 };
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
