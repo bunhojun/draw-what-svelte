@@ -7,10 +7,10 @@ export const RULE = {
 
 export const SUBJECTS = [
 	"cat",
-	"yoga",
+	"toe",
 	"flower",
 	"lion",
-	"beach",
+	"beard",
 	"strawberry",
 	"crab",
 	"car",
