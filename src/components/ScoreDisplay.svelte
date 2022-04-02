@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { trimUnderscore } from "../helpers/trim-underscore";
 	import type { Candidates } from "../helpers/classify-drawing";
+	import { TEST_ID } from "../constants/test-id";
 
 	export let candidates: Candidates = [];
 
@@ -10,7 +11,7 @@
 
 <div class="scoreDisplay">
 	{#if trimmedCandidates.length > 0}
-		<ul>
+		<ul data-testid={TEST_ID.ConfidenceScores}>
 			{#each trimmedCandidates as { label, confidence }}
 				<li class="confidence">
 					<span>{label}</span> <span>{Math.round(confidence * 100)} %</span>
