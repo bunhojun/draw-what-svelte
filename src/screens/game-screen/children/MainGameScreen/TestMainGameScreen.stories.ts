@@ -15,10 +15,14 @@ const Template = () => ({
 		onSummaryFinish: () => null,
 		currentSubject: "cat",
 	},
-	chromatic: { delay: 3000 },
 });
 
 export const MainGameScreen = Template.bind({});
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+MainGameScreen.parameters = {
+	chromatic: { disableSnapshot: true },
+};
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 MainGameScreen.play = async () => {
