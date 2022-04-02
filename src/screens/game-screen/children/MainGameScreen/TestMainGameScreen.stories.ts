@@ -15,6 +15,7 @@ const Template = () => ({
 		onSummaryFinish: () => null,
 		currentSubject: "cat",
 	},
+	chromatic: { disableSnapshot: true },
 });
 
 export const MainGameScreen = Template.bind({});
