@@ -15,12 +15,15 @@
 	export let updateGalleryItems: (newItem: GalleryItem) => void;
 	export let onSummaryFinish: () => void;
 	export let currentSubject: CurrentSubject;
+	// to enable to test this component, set RULE as a property
+	export let rule = RULE;
 
 	let element: HTMLElement;
-	let remainder: number = RULE.GAME_DURATION;
+	let remainder: number = rule.GAME_DURATION;
 	let canvas: Canvas;
 	let candidates: Candidates = [];
 	let interval: Interval;
+	let isSummaryTime = false;
 
 	const onGetFinalResult: ClassifierCallback = async (e, result) => {
 		const thisGameResult = result.find(({ label }) => label === currentSubject);
@@ -35,7 +38,7 @@
 	};
 
 	const onGetResult: ClassifierCallback = (e, result) => {
-		candidates = result.splice(0, RULE.NUM_OF_CANDIDATES);
+		candidates = result.splice(0, rule.NUM_OF_CANDIDATES);
 	};
 
 	const startSummaryCountdown = () => {
@@ -43,7 +46,8 @@
 			remainder = remainder - 1;
 		};
 
-		remainder = RULE.TRANSITION_DURATION;
+		isSummaryTime = true;
+		remainder = rule.TRANSITION_DURATION;
 		interval = startCountdown(remainder, onSummaryTick, onSummaryFinish).interval;
 	};
 
@@ -56,7 +60,7 @@
 		};
 		const onFinishCountdown = async () => {
 			await classifyDrawing(canvas, onGetFinalResult);
-			startSummaryCountdown();
+			setTimeout(startSummaryCountdown, 1000);
 		};
 
 		interval = startCountdown(remainder, onTick, onFinishCountdown).interval;
@@ -78,7 +82,7 @@
 	<h1>draw {currentSubject}</h1>
 	<div class="gameWrapper">
 		<div bind:this={element} class="canvas" />
-		<GameInfoBox {remainder} {canvas} {currentSubject} {candidates} />
+		<GameInfoBox {remainder} {canvas} {currentSubject} {candidates} {isSummaryTime} />
 	</div>
 </ScreenTemplate>
 
