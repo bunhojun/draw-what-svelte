@@ -6,9 +6,7 @@
 <Meta title="Screens/MainGame" component={PureMainGameScreen} />
 
 <Template let:args>
-	<div class="template">
-		<PureMainGameScreen {...args} />
-	</div>
+	<PureMainGameScreen {...args} />
 </Template>
 
 <Story
@@ -19,9 +17,3 @@
 		currentSubject: "cat",
 	}}
 />
-
-<style>
-	.template {
-		height: 100vh;
-	}
-</style>
