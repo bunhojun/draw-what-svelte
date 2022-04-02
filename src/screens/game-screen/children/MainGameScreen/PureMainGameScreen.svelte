@@ -21,6 +21,7 @@
 	let canvas: Canvas;
 	let candidates: Candidates = [];
 	let interval: Interval;
+	let isSummaryTime = false;
 
 	const onGetFinalResult: ClassifierCallback = async (e, result) => {
 		const thisGameResult = result.find(({ label }) => label === currentSubject);
@@ -43,6 +44,7 @@
 			remainder = remainder - 1;
 		};
 
+		isSummaryTime = true;
 		remainder = RULE.TRANSITION_DURATION;
 		interval = startCountdown(remainder, onSummaryTick, onSummaryFinish).interval;
 	};
@@ -56,7 +58,8 @@
 		};
 		const onFinishCountdown = async () => {
 			await classifyDrawing(canvas, onGetFinalResult);
-			startSummaryCountdown();
+			setTimeout(startSummaryCountdown, 1000);
+			// startSummaryCountdown();
 		};
 
 		interval = startCountdown(remainder, onTick, onFinishCountdown).interval;
@@ -78,7 +81,7 @@
 	<h1>draw {currentSubject}</h1>
 	<div class="gameWrapper">
 		<div bind:this={element} class="canvas" />
-		<GameInfoBox {remainder} {canvas} {currentSubject} {candidates} />
+		<GameInfoBox {remainder} {canvas} {currentSubject} {candidates} {isSummaryTime} />
 	</div>
 </ScreenTemplate>
 
