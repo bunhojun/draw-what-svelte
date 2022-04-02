@@ -8,12 +8,20 @@ export default {
 	component: PureMainGameScreen,
 };
 
+const testRule = {
+	GAME_DURATION: 7,
+	TRANSITION_DURATION: 2,
+	GAME_MAX_ROUND: 5,
+	NUM_OF_CANDIDATES: 3,
+};
+
 const Template = () => ({
 	Component: PureMainGameScreen,
 	props: {
 		updateGalleryItems: () => null,
 		onSummaryFinish: () => null,
 		currentSubject: "cat",
+		rule: testRule,
 	},
 });
 
@@ -34,16 +42,16 @@ MainGameScreen.play = async () => {
 	await waitFor(() => expect(screen.getByTestId(TEST_ID.ConfidenceScores)).toBeInTheDocument(), {
 		timeout: 3000,
 	});
-	// check if the remainder container starts blinking 15 seconds after mounting
+	// check if the remainder container starts blinking 5 seconds before the round ends
 	await waitFor(() => expect(mainGameRemainderContainer.classList).toContain("blinking"), {
-		timeout: 15000,
+		timeout: (testRule.GAME_DURATION - 5) * 1000,
 	});
-	// check if the remainder container stops blinking 20 seconds after mounting
+	// check if the remainder container stops blinking when the round ends
 	await waitFor(() => expect(mainGameRemainderContainer.classList).not.toContain("blinking"), {
-		timeout: 20000,
+		timeout: testRule.GAME_DURATION * 1000,
 	});
-	// check if the remainder container renders the proper text 22 seconds after mounting
+	// check if the remainder container renders the proper text when the round ends
 	await waitFor(() => expect(mainGameRemainderContainer).toContainHTML("until next round"), {
-		timeout: 22000,
+		timeout: testRule.GAME_DURATION * 1000 + 2,
 	});
 };

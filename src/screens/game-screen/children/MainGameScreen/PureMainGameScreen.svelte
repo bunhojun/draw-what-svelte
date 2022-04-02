@@ -15,9 +15,11 @@
 	export let updateGalleryItems: (newItem: GalleryItem) => void;
 	export let onSummaryFinish: () => void;
 	export let currentSubject: CurrentSubject;
+	// to enable to test this component, set RULE as a property
+	export let rule = RULE;
 
 	let element: HTMLElement;
-	let remainder: number = RULE.GAME_DURATION;
+	let remainder: number = rule.GAME_DURATION;
 	let canvas: Canvas;
 	let candidates: Candidates = [];
 	let interval: Interval;
@@ -36,7 +38,7 @@
 	};
 
 	const onGetResult: ClassifierCallback = (e, result) => {
-		candidates = result.splice(0, RULE.NUM_OF_CANDIDATES);
+		candidates = result.splice(0, rule.NUM_OF_CANDIDATES);
 	};
 
 	const startSummaryCountdown = () => {
@@ -45,7 +47,7 @@
 		};
 
 		isSummaryTime = true;
-		remainder = RULE.TRANSITION_DURATION;
+		remainder = rule.TRANSITION_DURATION;
 		interval = startCountdown(remainder, onSummaryTick, onSummaryFinish).interval;
 	};
 
@@ -59,7 +61,6 @@
 		const onFinishCountdown = async () => {
 			await classifyDrawing(canvas, onGetFinalResult);
 			setTimeout(startSummaryCountdown, 1000);
-			// startSummaryCountdown();
 		};
 
 		interval = startCountdown(remainder, onTick, onFinishCountdown).interval;

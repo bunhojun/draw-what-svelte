@@ -14,7 +14,7 @@
 <div class="gameInfo">
 	<div
 		class={`remainderContainer ${
-			remainder <= 5 && remainder !== 0 && !isSummaryTime && "blinking"
+			!isSummaryTime && remainder <= 5 && remainder !== 0 && "blinking"
 		}`}
 		data-testid={TEST_ID.MainGameRemainderContainer}
 	>
