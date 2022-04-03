@@ -3,7 +3,7 @@ name: on_publish
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   chromatic-deployment:
