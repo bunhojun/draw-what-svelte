@@ -2,6 +2,12 @@
 	import GameScreen from "./screens/game-screen/GameScreen.svelte";
 	import HomeScreen from "./screens/HomeScreen/HomeScreen.svelte";
 	import { isGameStarted } from "./stores/stores";
+	import { RULE as defaultRule } from "./constants/rule";
+	import { setContext } from "svelte";
+
+	// to enable to test the whole process of this game easily, set RULE as a property
+	export let RULE = defaultRule;
+	setContext("RULE", RULE);
 </script>
 
 {#if $isGameStarted}

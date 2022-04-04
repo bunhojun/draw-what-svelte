@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { RULE } from "../../../../constants/rule";
+	import { RULE as defaultRule } from "../../../../constants/rule";
 	import { Interval, startCountdown } from "../../../../helpers/start-countdown";
 	import { onDestroy, onMount } from "svelte";
 	import { Canvas } from "../../../../classes/canvas";
@@ -11,15 +11,16 @@
 	import { CurrentSubject, GalleryItem } from "../../stores/stores";
 	import ScreenTemplate from "../../../../components/ScreenTemplate.svelte";
 	import GameInfoBox from "../../../../components/GameInfoBox.svelte";
+	import { TEST_ID } from "../../../../constants/test-id";
 
 	export let updateGalleryItems: (newItem: GalleryItem) => void;
 	export let onSummaryFinish: () => void;
 	export let currentSubject: CurrentSubject;
 	// to enable to test this component, set RULE as a property
-	export let rule = RULE;
+	export let RULE = defaultRule;
 
 	let element: HTMLElement;
-	let remainder: number = rule.GAME_DURATION;
+	let remainder: number = RULE.GAME_DURATION;
 	let canvas: Canvas;
 	let candidates: Candidates = [];
 	let interval: Interval;
@@ -38,7 +39,7 @@
 	};
 
 	const onGetResult: ClassifierCallback = (e, result) => {
-		candidates = result.splice(0, rule.NUM_OF_CANDIDATES);
+		candidates = result.splice(0, RULE.NUM_OF_CANDIDATES);
 	};
 
 	const startSummaryCountdown = () => {
@@ -47,7 +48,7 @@
 		};
 
 		isSummaryTime = true;
-		remainder = rule.TRANSITION_DURATION;
+		remainder = RULE.TRANSITION_DURATION;
 		interval = startCountdown(remainder, onSummaryTick, onSummaryFinish).interval;
 	};
 
@@ -78,7 +79,7 @@
 	});
 </script>
 
-<ScreenTemplate withDefaultHeader>
+<ScreenTemplate withDefaultHeader screenTestId={TEST_ID.MainGameScreen}>
 	<h1>draw {currentSubject}</h1>
 	<div class="gameWrapper">
 		<div bind:this={element} class="canvas" />
