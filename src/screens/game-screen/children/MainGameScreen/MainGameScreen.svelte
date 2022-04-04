@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { RULE } from "../../../../constants/rule";
 	import {
 		currentRound,
 		currentScreen,
@@ -9,6 +8,9 @@
 	} from "../../stores/stores";
 	import { SCREENS } from "../../../../constants/screens";
 	import PureMainGameScreen from "./PureMainGameScreen.svelte";
+	import { getContext } from "svelte";
+
+	const RULE = getContext("RULE");
 
 	const updateGalleryItems = (newItem: GalleryItem) => {
 		galleryItems.update((items) => [...items, newItem]);
@@ -24,4 +26,9 @@
 	};
 </script>
 
-<PureMainGameScreen {updateGalleryItems} {onSummaryFinish} currentSubject={$currentSubject} />
+<PureMainGameScreen
+	{updateGalleryItems}
+	{onSummaryFinish}
+	currentSubject={$currentSubject}
+	{RULE}
+/>

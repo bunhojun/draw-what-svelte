@@ -21,7 +21,7 @@ const Template = () => ({
 		updateGalleryItems: () => null,
 		onSummaryFinish: () => null,
 		currentSubject: "cat",
-		rule: testRule,
+		RULE: testRule,
 	},
 });
 

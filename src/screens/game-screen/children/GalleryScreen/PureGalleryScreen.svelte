@@ -2,11 +2,12 @@
 	import GalleryCanvas from "../../../../components/GalleryCanvas.svelte";
 	import type { GalleryItem } from "../../stores/stores";
 	import ScreenTemplate from "../../../../components/ScreenTemplate.svelte";
+	import { TEST_ID } from "../../../../constants/test-id";
 
 	export let galleryItems: GalleryItem[] = [];
 </script>
 
-<ScreenTemplate withDefaultHeader>
+<ScreenTemplate withDefaultHeader screenTestId={TEST_ID.GalleryScreen}>
 	<h1>gallery</h1>
 	<ul class="gallery">
 		{#each galleryItems as { subject, score, imageBitmap }}

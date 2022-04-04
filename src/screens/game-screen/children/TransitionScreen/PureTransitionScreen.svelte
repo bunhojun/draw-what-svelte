@@ -1,14 +1,15 @@
 <script lang="ts">
-	import { RULE } from "../../../../constants/rule";
 	import { Interval, startCountdown } from "../../../../helpers/start-countdown";
 	import { onDestroy, onMount } from "svelte";
 	import { CurrentSubject, CurrentRound } from "../../stores/stores";
 	import ScreenTemplate from "../../../../components/ScreenTemplate.svelte";
 	import { TEST_ID } from "../../../../constants/test-id";
+	import { RULE as defaultRule } from "../../../../constants/rule";
 
 	export let onFinishCountDown: () => void;
 	export let currentSubject: CurrentSubject;
 	export let currentRound: CurrentRound;
+	export let RULE = defaultRule;
 
 	let currentRemainder: number = RULE.TRANSITION_DURATION;
 	let interval: Interval;
