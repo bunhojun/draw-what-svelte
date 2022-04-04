@@ -14,7 +14,7 @@ describe("startCountdown", () => {
 		};
 		startCountdown(3, onTick, onFinish);
 		await waitFor(() => expect(counter).toBe(1), { timeout: 1100 });
-		await waitFor(() => expect(counter).toBe(2), { timeout: 1000 });
-		await waitFor(() => expect(message).toBe("final message"), { timeout: 1000 });
+		await waitFor(() => expect(counter).toBe(2), { timeout: 1100 });
+		await waitFor(() => expect(message).toBe("final message"), { timeout: 1100 });
 	});
 });
