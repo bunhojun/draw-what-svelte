@@ -6,7 +6,9 @@
 <Meta title="Components/Header" component={PureHeader} />
 
 <Template let:args>
-	<PureHeader {...args} />
+	<div class="template">
+		<PureHeader {...args} />
+	</div>
 </Template>
 
 <Story
@@ -15,3 +17,11 @@
 		onClickLogo: () => null,
 	}}
 />
+
+<style>
+	.template {
+		height: 100vh;
+		background-color: #ffc0cb;
+		padding: 10px;
+	}
+</style>
