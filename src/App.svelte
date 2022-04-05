@@ -1,5 +1,5 @@
 <script lang="ts">
-	import GameScreen from "./screens/game-screen/GameScreen.svelte";
+	import GameScreen from "./screens/GameScreen/GameScreen.svelte";
 	import HomeScreen from "./screens/HomeScreen/HomeScreen.svelte";
 	import { isGameStarted } from "./stores/stores";
 	import { RULE as defaultRule } from "./constants/rule";
