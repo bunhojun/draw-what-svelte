@@ -1,6 +1,9 @@
 name: on_push
 
-on: push
+on:
+  push:
+    branches-ignore:
+      - 'main'
 
 jobs:
   chromatic-deployment:
