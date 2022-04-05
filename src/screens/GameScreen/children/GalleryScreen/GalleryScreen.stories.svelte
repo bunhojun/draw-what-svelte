@@ -1,11 +1,8 @@
 <script lang="ts">
 	import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
 	import PureGalleryScreen from "./PureGalleryScreen.svelte";
-	import { SUBJECTS } from "../../../../constants/rule";
+	import { RULE, SUBJECTS } from "../../../../constants/rule";
 	import { CANVAS } from "../../../../constants/canvas";
-	import { getContext } from "svelte";
-
-	const RULE = getContext("RULE");
 
 	const galleryItems = [...Array(RULE.GAME_MAX_ROUND).keys()].map((_, index) => {
 		const canvas = document.createElement("canvas");
