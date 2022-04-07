@@ -5,4 +5,6 @@ export const TEST_ID = {
 	MainGameScreen: "MainGameScreen",
 	GalleryScreen: "GalleryScreen",
 	MainGameRemainderContainer: "MainGameRemainderContainer",
+	HomeLink: "HomeLink",
+	RoundIndicator: "RoundIndicator",
 } as const;

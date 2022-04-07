@@ -11,14 +11,29 @@ export type CurrentScreen = number;
 export type CurrentRound = number;
 export type CurrentSubject = string;
 
-export const currentScreen = writable<CurrentScreen>(SCREENS.TRANSITION);
-// start from 1 instead of 0 for convenience
-export const currentRound = writable<CurrentRound>(1);
+const initial = {
+	screen: SCREENS.TRANSITION,
+	// start from 1 instead of 0 for convenience
+	round: 1,
+	galleryItems: [],
+};
 
+export const currentScreen = writable<CurrentScreen>(initial.screen);
+export const currentRound = writable<CurrentRound>(initial.round);
 export const currentSubject = derived<Writable<CurrentRound>, CurrentSubject>(
 	currentRound,
 	($currentRound) => SUBJECTS[$currentRound - 1]
 );
 
 // items to show in the gallery screen
-export const galleryItems = writable<GalleryItem[]>([]);
+export const galleryItems = writable<GalleryItem[]>(initial.galleryItems);
+
+export const initializeState = () => {
+	currentScreen.set(initial.screen);
+	currentRound.set(initial.round);
+	galleryItems.set(initial.galleryItems);
+};
+
+export const exportForTest = {
+	initial,
+};

@@ -1,13 +1,11 @@
 <script lang="ts">
 	import Header from "./Header/Header.svelte";
-	export let withDefaultHeader = false;
+	export let withRoundIndicator = false;
 	export let screenTestId;
 </script>
 
 <div class="screenTemplate" data-testid={screenTestId}>
-	{#if withDefaultHeader}
-		<Header />
-	{/if}
+	<Header {withRoundIndicator} />
 	<main class="content">
 		<div>
 			<slot />

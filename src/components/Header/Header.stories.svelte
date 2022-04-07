@@ -15,6 +15,7 @@
 	name="Header"
 	args={{
 		onClickLogo: () => null,
+		currentRound: 1,
 	}}
 />
 
