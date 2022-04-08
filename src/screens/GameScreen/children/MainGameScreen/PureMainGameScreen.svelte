@@ -79,7 +79,7 @@
 	});
 </script>
 
-<ScreenTemplate withDefaultHeader screenTestId={TEST_ID.MainGameScreen}>
+<ScreenTemplate screenTestId={TEST_ID.MainGameScreen} withRoundIndicator>
 	<h1>draw {currentSubject}</h1>
 	<div class="gameWrapper">
 		<div bind:this={element} class="canvas" />

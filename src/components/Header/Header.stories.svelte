@@ -12,9 +12,19 @@
 </Template>
 
 <Story
-	name="Header"
+	name="DefaultHeader"
 	args={{
 		onClickLogo: () => null,
+		currentRound: 1,
+	}}
+/>
+
+<Story
+	name="HeaderWithRoundIndicator"
+	args={{
+		onClickLogo: () => null,
+		currentRound: 2,
+		withRoundIndicator: true,
 	}}
 />
 

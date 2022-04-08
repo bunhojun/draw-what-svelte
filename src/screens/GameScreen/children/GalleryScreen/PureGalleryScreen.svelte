@@ -7,7 +7,7 @@
 	export let galleryItems: GalleryItem[] = [];
 </script>
 
-<ScreenTemplate withDefaultHeader screenTestId={TEST_ID.GalleryScreen}>
+<ScreenTemplate screenTestId={TEST_ID.GalleryScreen}>
 	<h1>gallery</h1>
 	<ul class="gallery">
 		{#each galleryItems as { subject, score, imageBitmap }}

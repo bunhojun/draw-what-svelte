@@ -29,7 +29,7 @@
 	});
 </script>
 
-<ScreenTemplate withDefaultHeader screenTestId={TEST_ID.TransitionScreen}>
+<ScreenTemplate screenTestId={TEST_ID.TransitionScreen}>
 	<div class="transition">
 		<h1>
 			draw {currentSubject}
