@@ -45,8 +45,10 @@ const checkRoundIndicator = async (currentRound: number, timeout: number) =>
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 TestApp.play = async () => {
+	// initialize stores first by clicking the logo
+	fireEvent.click(screen.getByTestId(TEST_ID.HomeLink));
 	// check screen change: Home -> Transition
-	fireEvent.click(screen.getByTestId(TEST_ID.StartButton));
+	await waitFor(() => fireEvent.click(screen.getByTestId(TEST_ID.StartButton)));
 	await checkScreenExistence(TEST_ID.TransitionScreen);
 	// check screen change: Transition -> MainGame
 	await checkScreenExistence(TEST_ID.MainGameScreen, 1000);
@@ -66,7 +68,9 @@ export const TestLogoClick = Template.bind({});
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 TestLogoClick.play = async () => {
-	fireEvent.click(screen.getByTestId(TEST_ID.StartButton));
+	// initialize stores first by clicking the logo
+	fireEvent.click(screen.getByTestId(TEST_ID.HomeLink));
+	await waitFor(() => fireEvent.click(screen.getByTestId(TEST_ID.StartButton)));
 	await checkScreenExistence(TEST_ID.TransitionScreen);
 	fireEvent.click(screen.getByTestId(TEST_ID.HomeLink));
 	await checkScreenExistence(TEST_ID.StartButton);
