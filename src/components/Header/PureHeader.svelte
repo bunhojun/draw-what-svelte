@@ -27,19 +27,21 @@
 		padding: 5px;
 		display: flex;
 		justify-content: space-between;
-		width: 100%;
+		width: 95%;
 	}
 	.roundIndicatorWrapper {
 		display: flex;
-		margin-right: 100px;
 		font-size: 25px;
 	}
 	.roundIndicator {
 		margin-right: 10px;
 		border: 1px solid #000;
 		border-radius: 50%;
-		padding: 0 10px;
-		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 35px;
+		height: 35px;
 		font-family: sans-serif;
 	}
 	.currentRound {

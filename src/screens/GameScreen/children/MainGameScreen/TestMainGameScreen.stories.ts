@@ -25,16 +25,16 @@ const Template = () => ({
 	},
 });
 
-export const MainGameScreen = Template.bind({});
+export const TestMainGameScreen = Template.bind({});
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-MainGameScreen.parameters = {
+TestMainGameScreen.parameters = {
 	// disable snapshot since this test requires timeout, which makes the result of test on Chromatic unstable
 	chromatic: { disableSnapshot: true },
 };
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-MainGameScreen.play = async () => {
+TestMainGameScreen.play = async () => {
 	const mainGameRemainderContainer = screen.getByTestId(TEST_ID.MainGameRemainderContainer);
 	// check if the remainder container renders the proper text
 	await expect(mainGameRemainderContainer).toContainHTML("remaining");
