@@ -9,9 +9,14 @@ const initCanvas = (p: P5): void => {
 };
 
 export class Canvas extends P5 {
+	isAbleToDraw = true;
+
 	constructor(element: HTMLElement) {
 		super(initCanvas, element);
 		this.mouseDragged = (): void => {
+			if (!this.isAbleToDraw) {
+				return;
+			}
 			this.noStroke();
 			this.fill(0);
 			this.ellipse(this.mouseX, this.mouseY, CANVAS.BRUSH_THICKNESS, CANVAS.BRUSH_THICKNESS);
@@ -19,6 +24,13 @@ export class Canvas extends P5 {
 	}
 
 	clearCanvas() {
+		if (!this.isAbleToDraw) {
+			return;
+		}
 		this.background(255);
+	}
+
+	disableCanvas() {
+		this.isAbleToDraw = false;
 	}
 }

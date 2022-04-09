@@ -5,13 +5,14 @@
 	export let onClickLogo;
 	export let withRoundIndicator = false;
 	export let currentRound: number;
+	export let maxRound = RULE.GAME_MAX_ROUND;
 </script>
 
 <header class="header">
 	<a href="/" on:click|preventDefault={onClickLogo} data-testid={TEST_ID.HomeLink}> Draw What? </a>
 	{#if withRoundIndicator}
 		<ul class="roundIndicatorWrapper" data-testid={TEST_ID.RoundIndicator}>
-			{#each [...Array(RULE.GAME_MAX_ROUND).keys()] as _, i}
+			{#each [...Array(maxRound).keys()] as _, i}
 				<li class={`roundIndicator ${currentRound === i + 1 ? "currentRound" : ""}`}>
 					{i + 1}
 				</li>
