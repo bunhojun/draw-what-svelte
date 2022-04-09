@@ -11,7 +11,7 @@
 	<h1>gallery</h1>
 	<ul class="gallery">
 		{#each galleryItems as { subject, score, imageBitmap }}
-			<li class="galleryItems">
+			<li class="galleryItem">
 				<span>{subject}</span>
 				<GalleryCanvas {imageBitmap} />
 				<span>confidence: {score} %</span>
@@ -23,12 +23,12 @@
 <style>
 	.gallery {
 		display: flex;
-		justify-content: space-between;
 		flex-wrap: wrap;
 		width: 1200px;
 	}
-	.galleryItems {
+	.galleryItem {
 		margin-top: 15px;
+		margin-right: 10px;
 		display: flex;
 		flex-direction: column;
 	}

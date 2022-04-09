@@ -60,6 +60,7 @@
 			}
 		};
 		const onFinishCountdown = async () => {
+			canvas.disableCanvas();
 			await classifyDrawing(canvas, onGetFinalResult);
 			setTimeout(startSummaryCountdown, 1000);
 		};

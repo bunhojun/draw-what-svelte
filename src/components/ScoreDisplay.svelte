@@ -18,6 +18,8 @@
 				</li>
 			{/each}
 		</ul>
+	{:else}
+		analyzing...
 	{/if}
 </div>
 
@@ -32,12 +34,12 @@
 		padding: 0 30px;
 		border: 3px solid #000;
 		border-radius: 6px;
+		font-size: 25px;
 	}
 	ul {
 		width: 100%;
 	}
 	.confidence {
-		font-size: 25px;
 		display: flex;
 		justify-content: space-between;
 	}
