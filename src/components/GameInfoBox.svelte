@@ -4,11 +4,13 @@
 	import Button from "./Button/Button.svelte";
 	import { Canvas } from "../classes/canvas";
 	import { TEST_ID } from "../constants/test-id";
+	import type { GalleryItem } from "../screens/GameScreen/stores/stores";
 
 	export let remainder: number;
 	export let candidates: Candidates;
 	export let canvas: Canvas;
 	export let isSummaryTime: boolean;
+	export let finalResult: GalleryItem | undefined;
 </script>
 
 <div class="gameInfo">
@@ -22,7 +24,7 @@
 			? "until next round"
 			: "remaining"}
 	</div>
-	<ScoreDisplay {candidates} />
+	<ScoreDisplay {candidates} {finalResult} />
 	<Button onClick={() => canvas.clearCanvas()}>clear canvas</Button>
 </div>
 

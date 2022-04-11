@@ -25,6 +25,7 @@
 	let candidates: Candidates = [];
 	let interval: Interval;
 	let isSummaryTime = false;
+	let finalResult: GalleryItem | undefined;
 
 	const onGetFinalResult: ClassifierCallback = async (e, result) => {
 		const thisGameResult = result.find(({ label }) => label === currentSubject);
@@ -36,6 +37,7 @@
 			score: (thisGameResult && Math.round(thisGameResult.confidence * 100)) || 0,
 		};
 		updateGalleryItems(newItem);
+		finalResult = newItem;
 	};
 
 	const onGetResult: ClassifierCallback = (e, result) => {
@@ -84,7 +86,7 @@
 	<h1>draw {currentSubject}</h1>
 	<div class="gameWrapper">
 		<div bind:this={element} class="canvas" />
-		<GameInfoBox {remainder} {canvas} {currentSubject} {candidates} {isSummaryTime} />
+		<GameInfoBox {remainder} {canvas} {currentSubject} {candidates} {isSummaryTime} {finalResult} />
 	</div>
 </ScreenTemplate>
 
