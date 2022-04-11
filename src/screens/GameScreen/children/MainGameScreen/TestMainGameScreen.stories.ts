@@ -38,6 +38,9 @@ TestMainGameScreen.play = async () => {
 	const mainGameRemainderContainer = screen.getByTestId(TEST_ID.MainGameRemainderContainer);
 	// check if the remainder container renders the proper text
 	await expect(mainGameRemainderContainer).toContainHTML("remaining");
+	// check if the waiting text shows up first
+	const waitingForCandidates = screen.getByTestId(TEST_ID.WaitingForCandidates);
+	await expect(waitingForCandidates).toBeInTheDocument();
 	// check if imageClassifier is called 3 seconds after mounting
 	await waitFor(() => expect(screen.getByTestId(TEST_ID.ConfidenceScores)).toBeInTheDocument(), {
 		timeout: 3000,
@@ -48,6 +51,10 @@ TestMainGameScreen.play = async () => {
 	});
 	// check if the remainder container stops blinking when the round ends
 	await waitFor(() => expect(mainGameRemainderContainer.classList).not.toContain("blinking"), {
+		timeout: testRule.GAME_DURATION * 1000,
+	});
+	// check if the final result of the current round shows up
+	await waitFor(() => expect(screen.getByTestId(TEST_ID.FinalResult)).toBeInTheDocument(), {
 		timeout: testRule.GAME_DURATION * 1000,
 	});
 	// check if the remainder container renders the proper text when the round ends

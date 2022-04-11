@@ -7,4 +7,6 @@ export const TEST_ID = {
 	MainGameRemainderContainer: "MainGameRemainderContainer",
 	HomeLink: "HomeLink",
 	RoundIndicator: "RoundIndicator",
+	FinalResult: "FinalResult",
+	WaitingForCandidates: "WaitingForCandidates",
 } as const;
