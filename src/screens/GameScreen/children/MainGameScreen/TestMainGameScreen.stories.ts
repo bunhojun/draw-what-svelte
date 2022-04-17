@@ -49,6 +49,10 @@ TestMainGameScreen.play = async () => {
 	await waitFor(() => expect(mainGameRemainderContainer.classList).toContain("blinking"), {
 		timeout: (testRule.GAME_DURATION - 5) * 1000,
 	});
+	// check if the score display shows a message 3 seconds before showing the final result
+	await waitFor(() => expect(screen.getByTestId(TEST_ID.PreFinish)).toBeInTheDocument(), {
+		timeout: (testRule.GAME_DURATION - 3) * 1000,
+	});
 	// check if the remainder container stops blinking when the round ends
 	await waitFor(() => expect(mainGameRemainderContainer.classList).not.toContain("blinking"), {
 		timeout: testRule.GAME_DURATION * 1000,

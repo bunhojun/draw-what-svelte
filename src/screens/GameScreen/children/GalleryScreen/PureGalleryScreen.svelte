@@ -18,6 +18,10 @@
 			</li>
 		{/each}
 	</ul>
+	<div class="gameResult">
+		average confidence: {galleryItems.reduce((accumulated, { score }) => accumulated + score, 0) /
+			galleryItems.length} %
+	</div>
 </ScreenTemplate>
 
 <style>
@@ -31,5 +35,9 @@
 		margin-right: 10px;
 		display: flex;
 		flex-direction: column;
+	}
+	.gameResult {
+		margin-top: 20px;
+		font-size: 25px;
 	}
 </style>

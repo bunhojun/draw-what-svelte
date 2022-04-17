@@ -9,4 +9,5 @@ export const TEST_ID = {
 	RoundIndicator: "RoundIndicator",
 	FinalResult: "FinalResult",
 	WaitingForCandidates: "WaitingForCandidates",
+	PreFinish: "PreFinish",
 } as const;
