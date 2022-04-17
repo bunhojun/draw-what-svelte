@@ -1,11 +1,12 @@
 <script lang="ts">
-	import { trimUnderscore } from "../helpers/trim-underscore";
-	import type { Candidates } from "../helpers/classify-drawing";
-	import { TEST_ID } from "../constants/test-id";
-	import type { GalleryItem } from "../screens/GameScreen/stores/stores";
+	import { trimUnderscore } from "../../helpers/trim-underscore";
+	import type { Candidates } from "../../helpers/classify-drawing";
+	import { TEST_ID } from "../../constants/test-id";
+	import type { GalleryItem } from "../../screens/GameScreen/stores/stores";
 
 	export let candidates: Candidates = [];
 	export let finalResult: GalleryItem | undefined;
+	export let remainder: number;
 
 	let trimmedCandidates: Candidates;
 	$: trimmedCandidates = trimUnderscore(candidates);
@@ -16,6 +17,8 @@
 		<span data-testid={TEST_ID.FinalResult}>
 			confidence: {finalResult.score} %
 		</span>
+	{:else if remainder <= 2}
+		<span data-testid={TEST_ID.PreFinish}>Hang on...</span>
 	{:else if trimmedCandidates.length > 0}
 		<ul data-testid={TEST_ID.ConfidenceScores}>
 			{#each trimmedCandidates as { label, confidence }}
