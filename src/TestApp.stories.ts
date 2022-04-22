@@ -20,6 +20,11 @@ const Template = () => ({
 	},
 });
 
+Template.parameters = {
+	// disable snapshot since this test requires timeout, which makes the result of test on Chromatic unstable
+	chromatic: { disableSnapshot: true },
+};
+
 export const TestApp = Template.bind({});
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -65,6 +70,12 @@ TestApp.play = async () => {
 };
 
 export const TestLogoClick = Template.bind({});
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+TestLogoClick.parameters = {
+	// disable snapshot since this test requires timeout, which makes the result of test on Chromatic unstable
+	chromatic: { disableSnapshot: true },
+};
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 TestLogoClick.play = async () => {
