@@ -9391,10 +9391,10 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-ml5@0.10.3:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/ml5/-/ml5-0.10.3.tgz#42db365df3deba54086d358aec7565e8a3823a15"
-  integrity sha512-fH8dj3kBDwCRq9pTlEuRe4nXTYMOceWP+k4pgiIMXVNHvVbn1MaTtc/UpLQ5nGsUapBCe4fd4SxLVrQDPfvWaw==
+ml5@0.12.1:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/ml5/-/ml5-0.12.1.tgz#a551b0a493aa6bc7e74fad39a46ece48b19675d8"
+  integrity sha512-rQO76ZGp1LkCPCoIMC/Nw7CiOcOhBhnVuZgouI8VXOZmnVcq/5eAmZUoFzBiTON6433x9oRbLQU0TmkpvBMXbA==
   dependencies:
     "@magenta/sketch" "0.2.0"
     "@tensorflow-models/body-pix" "1.1.2"
