@@ -26,6 +26,12 @@ Template.parameters = {
 };
 
 export const TestApp = Template.bind({});
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+TestApp.parameters = {
+	// disable snapshot since this test requires timeout, which makes the result of test on Chromatic unstable
+	chromatic: { disableSnapshot: true },
+};
 
 const checkScreenExistence = async (screenId: keyof typeof TEST_ID, timeout = 0) =>
 	waitFor(() => expect(screen.getByTestId(screenId)).toBeInTheDocument(), {
@@ -64,6 +70,12 @@ TestApp.play = async () => {
 };
 
 export const TestLogoClick = Template.bind({});
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+TestLogoClick.parameters = {
+	// disable snapshot since this test requires timeout, which makes the result of test on Chromatic unstable
+	chromatic: { disableSnapshot: true },
+};
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 TestLogoClick.play = async () => {
