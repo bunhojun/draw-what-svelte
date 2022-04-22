@@ -39,7 +39,7 @@
     "concurrently": "7.1.0",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.4.0",
-    "eslint-plugin-storybook": "0.5.7",
+    "eslint-plugin-storybook": "0.5.11",
     "eslint-plugin-svelte3": "3.4.1",
     "jest": "27.5.1",
     "prettier": "2.5.1",
