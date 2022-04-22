@@ -13,7 +13,11 @@
 
 <Story
 	name="Transition"
-	args={{ onFinishCountDown: () => null, currentSubject: "cat", currentRound: 1 }}
+	args={{
+		currentSubject: "cat",
+		currentRound: 1,
+		currentRemainder: 5,
+	}}
 />
 
 <style>
