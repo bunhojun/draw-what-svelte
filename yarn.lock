@@ -2291,7 +2291,7 @@
     unfetch "^4.2.0"
     util-deprecate "^1.0.2"
 
-"@storybook/core-common@6.4.22":
+"@storybook/core-common@6.4.22", "@storybook/core-common@^6.4.14":
   version "6.4.22"
   resolved "https://registry.yarnpkg.com/@storybook/core-common/-/core-common-6.4.22.tgz#b00fa3c0625e074222a50be3196cb8052dd7f3bf"
   integrity sha512-PD3N/FJXPNRHeQS2zdgzYFtqPLdi3MLwAicbnw+U3SokcsspfsAuyYHZOYZgwO8IAEKy6iCc7TpBdiSJZ/vAKQ==
@@ -2653,7 +2653,7 @@
     prettier ">=2.2.1 <=2.3.0"
     regenerator-runtime "^0.13.7"
 
-"@storybook/store@6.4.22":
+"@storybook/store@6.4.22", "@storybook/store@^6.4.14":
   version "6.4.22"
   resolved "https://registry.yarnpkg.com/@storybook/store/-/store-6.4.22.tgz#f291fbe3639f14d25f875cac86abb209a97d4e2a"
   integrity sha512-lrmcZtYJLc2emO+1l6AG4Txm9445K6Pyv9cGAuhOJ9Kks0aYe0YtvMkZVVry0RNNAIv6Ypz72zyKc/QK+tZLAQ==
@@ -2693,13 +2693,15 @@
     sveltedoc-parser "^4.1.0"
     ts-dedent "^2.0.0"
 
-"@storybook/test-runner@0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@storybook/test-runner/-/test-runner-0.0.4.tgz#5f8b2321531e57175f942fa3e7c70bad5d29c650"
-  integrity sha512-mx+vX6s15NffKyBgyP5uRPuQyE+Uih5Ny6VuD6Mwaee8LSo1U0KZGo1kEPdghNF+gjsveKGQGbEmQEfa0+zDog==
+"@storybook/test-runner@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@storybook/test-runner/-/test-runner-0.0.6.tgz#8cb06cf6cec1dbee54e9ec087024761aa811740c"
+  integrity sha512-KY7Hfjmie+mb/iQ1HhYIfxOsWqIJEQ9S+lKkA83IYrmTTNo1C3GN9aCh+hLcGYkC366DllMVg30D9An/i4JYOw==
   dependencies:
+    "@storybook/core-common" "^6.4.14"
     "@storybook/csf" "0.0.2--canary.87bc651.0"
     "@storybook/csf-tools" "^6.4.14"
+    "@storybook/store" "^6.4.14"
     commander "^9.0.0"
     global "^4.4.0"
     is-localhost-ip "^1.4.0"
@@ -2708,6 +2710,7 @@
     node-fetch "^2"
     playwright "^1.14.0"
     tempy "^1.0.1"
+    ts-dedent "^2.0.0"
 
 "@storybook/testing-library@0.0.11":
   version "0.0.11"
