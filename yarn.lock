@@ -2751,13 +2751,14 @@
     resolve-from "^5.0.0"
     store2 "^2.12.0"
 
-"@sveltejs/vite-plugin-svelte@1.0.0-next.42":
-  version "1.0.0-next.42"
-  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-1.0.0-next.42.tgz#09e5327eb2cda0c067367864ff33c26080847ae9"
-  integrity sha512-I8ILzfjVQuOkl6eDHif6/QJhOEBnsA40u6/0RDWK0mujwOr+MfWCWEZEnrTKqa6YIVMO+uktfoknu61chbAIeg==
+"@sveltejs/vite-plugin-svelte@1.0.0-next.43":
+  version "1.0.0-next.43"
+  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-1.0.0-next.43.tgz#015d2b261c5dbbccd96c14be9c6f4df86ded67ca"
+  integrity sha512-MzeczqGrnDmbAldw/LfXV/dhpLC2bdUzuMhcx0C2j79V2uNzQERHDinxXnG2AVTCTjSpbQxzQwMMmYflnI7W1g==
   dependencies:
     "@rollup/pluginutils" "^4.2.1"
     debug "^4.3.4"
+    deepmerge "^4.2.2"
     kleur "^4.1.4"
     magic-string "^0.26.1"
     svelte-hmr "^0.14.11"
