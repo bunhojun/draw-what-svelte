@@ -2431,6 +2431,13 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
+"@storybook/csf@0.0.2--canary.4566f4d.1":
+  version "0.0.2--canary.4566f4d.1"
+  resolved "https://registry.yarnpkg.com/@storybook/csf/-/csf-0.0.2--canary.4566f4d.1.tgz#dac52a21c40ef198554e71fe4d20d61e17f65327"
+  integrity sha512-9OVvMVh3t9znYZwb0Svf/YQoxX2gVOeQTGe2bses2yj+a3+OJnCrUF3/hGv6Em7KujtOdL2LL+JnG49oMVGFgQ==
+  dependencies:
+    lodash "^4.17.15"
+
 "@storybook/csf@0.0.2--canary.87bc651.0":
   version "0.0.2--canary.87bc651.0"
   resolved "https://registry.yarnpkg.com/@storybook/csf/-/csf-0.0.2--canary.87bc651.0.tgz#c7b99b3a344117ef67b10137b6477a3d2750cf44"
@@ -2662,12 +2669,12 @@
     sveltedoc-parser "^4.1.0"
     ts-dedent "^2.0.0"
 
-"@storybook/test-runner@0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@storybook/test-runner/-/test-runner-0.0.8.tgz#af73e8581f83bb275ce44ac039fd3871d839f349"
-  integrity sha512-WHIIvbHJclvLVKwIZ6vMQ32iExrruU6rXztyKW39bvB91TrO7FofcDtlfiyoKsBQQOU32cK39xtlApaUb/KugA==
+"@storybook/test-runner@0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@storybook/test-runner/-/test-runner-0.1.0.tgz#a3bfafbf0f05c38956d536b63e6fb40f797a68e4"
+  integrity sha512-/oTtsFkMmOUSDw/p6sI1H8IHuXso01mFzaMQu1rx7NDNFHsOpq8NAEd7q3+bBGOh9UN16P+8lOwOR62DysP7yA==
   dependencies:
-    "@storybook/csf" "0.0.2--canary.87bc651.0"
+    "@storybook/csf" "0.0.2--canary.4566f4d.1"
     commander "^9.0.0"
     global "^4.4.0"
     is-localhost-ip "^1.4.0"
