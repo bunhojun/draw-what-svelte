@@ -23,7 +23,7 @@
     "@storybook/addon-essentials": "6.4.22",
     "@storybook/addon-interactions": "6.4.22",
     "@storybook/addon-links": "6.4.22",
-    "@storybook/addon-svelte-csf": "2.0.3",
+    "@storybook/addon-svelte-csf": "2.0.4",
     "@storybook/jest": "0.0.10",
     "@storybook/svelte": "6.4.22",
     "@storybook/test-runner": "0.1.0",
