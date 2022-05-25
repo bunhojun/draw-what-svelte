@@ -26,7 +26,7 @@
     "@storybook/addon-svelte-csf": "2.0.4",
     "@storybook/jest": "0.0.10",
     "@storybook/svelte": "6.5.5",
-    "@storybook/test-runner": "0.1.0",
+    "@storybook/test-runner": "0.1.1",
     "@storybook/testing-library": "0.0.11",
     "@sveltejs/vite-plugin-svelte": "1.0.0-next.44",
     "@testing-library/jest-dom": "5.16.4",
