@@ -1,4 +1,5 @@
-import { derived, Writable, writable } from "svelte/store";
+import { derived, writable } from "svelte/store";
+import type { Writable } from "svelte/store";
 import { SCREENS } from "../../../constants/screens";
 import { SUBJECTS } from "../../../constants/rule";
 
