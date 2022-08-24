@@ -2761,15 +2761,16 @@
     read-pkg-up "^7.0.1"
     regenerator-runtime "^0.13.7"
 
-"@storybook/test-runner@0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@storybook/test-runner/-/test-runner-0.5.0.tgz#cd766f3509537fe0f709607df706a6e5871e2fc4"
-  integrity sha512-It/lbQ5sBltyrYNozyN/TmI7fBaLupYQTrlvHikWdyVBOUDIWXKBeaR2M2GU2e+0BrqNY7u/JPJNP7diEBGO/Q==
+"@storybook/test-runner@0.6.3":
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/@storybook/test-runner/-/test-runner-0.6.3.tgz#48e4ca3e253051b281e5d471a9111d9874e8fc87"
+  integrity sha512-Fgfq4zBRM9kKqDHqD1h+6fdaSAKa0z/O+hG7pXVQLS/GyGeO48khqZ5t6JRuN7zX7NIINuw6c1xZgqDQY70UBQ==
   dependencies:
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
     can-bind-to-host "^1.1.1"
     commander "^9.0.0"
     global "^4.4.0"
+    jest "^26.6.3 || ^27.0.0"
     jest-playwright-preset "^1.7.2"
     jest-serializer-html "^7.1.0"
     jest-watch-typeahead "^1.0.0"
@@ -9046,7 +9047,7 @@ jest-worker@^27.4.5, jest-worker@^27.5.1:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jest@27.5.1:
+jest@27.5.1, "jest@^26.6.3 || ^27.0.0":
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest/-/jest-27.5.1.tgz#dadf33ba70a779be7a6fc33015843b51494f63fc"
   integrity sha512-Yn0mADZB89zTtjkPJEXwrac3LHudkQMR+Paqa8uxJHCBr9agxztUifWCyiYrjhMPBoUVBjyny0I7XH6ozDr7QQ==
