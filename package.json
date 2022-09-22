@@ -28,7 +28,7 @@
     "@storybook/svelte": "6.5.12",
     "@storybook/test-runner": "0.6.3",
     "@storybook/testing-library": "0.0.13",
-    "@sveltejs/vite-plugin-svelte": "1.0.6",
+    "@sveltejs/vite-plugin-svelte": "1.0.8",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/svelte": "3.2.1",
     "@tsconfig/svelte": "3.0.0",
