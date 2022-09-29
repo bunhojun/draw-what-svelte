@@ -40,4 +40,16 @@
 		margin-top: 20px;
 		font-size: 25px;
 	}
+	@media only screen and (max-width: 480px) {
+		.gallery {
+			display: block;
+			width: 100%;
+			height: 400px;
+			overflow: scroll;
+			margin-top: 10px;
+		}
+		.galleryItem {
+			margin-right: 0;
+		}
+	}
 </style>

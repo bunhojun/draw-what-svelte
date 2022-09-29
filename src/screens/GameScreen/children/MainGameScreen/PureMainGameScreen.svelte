@@ -10,6 +10,7 @@
 	import ScreenTemplate from "../../../../components/ScreenTemplate.svelte";
 	import GameInfoBox from "../../../../components/GameInfoBox.svelte";
 	import { TEST_ID } from "../../../../constants/test-id";
+	import MainGameRemainder from "../../../../components/MainGameRemainder/MainGameRemainder.svelte";
 
 	export let updateGalleryItems: (newItem: GalleryItem) => void;
 	export let onSummaryFinish: () => void;
@@ -81,7 +82,12 @@
 </script>
 
 <ScreenTemplate screenTestId={TEST_ID.MainGameScreen} withRoundIndicator>
-	<h1>draw {currentSubject}</h1>
+	<div class="title">
+		<h1>draw {currentSubject}</h1>
+		{#if window.screen.width <= 480}
+			<MainGameRemainder {remainder} {isSummaryTime} />
+		{/if}
+	</div>
 	<div class="gameWrapper">
 		<div bind:this={element} class="canvas" />
 		<GameInfoBox {remainder} {canvas} {currentSubject} {candidates} {isSummaryTime} {finalResult} />
@@ -96,5 +102,20 @@
 		margin-right: 10px;
 		height: 560px;
 		border: 3px solid #000;
+	}
+	.title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	@media only screen and (max-width: 480px) {
+		.gameWrapper {
+			display: block;
+		}
+		.canvas {
+			margin-right: 0;
+			height: 350px;
+			border: 3px solid #000;
+		}
 	}
 </style>

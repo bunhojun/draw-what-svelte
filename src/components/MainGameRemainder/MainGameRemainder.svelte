@@ -9,7 +9,8 @@
 	class={`remainderContainer ${!isSummaryTime && remainder <= 5 && remainder !== 0 && "blinking"}`}
 	data-testid={TEST_ID.MainGameRemainderContainer}
 >
-	<span class="remainder">{remainder}</span> sec {isSummaryTime ? "until next round" : "remaining"}
+	<span class="remainder">{remainder}</span> sec&nbsp;
+	<span class="message">{isSummaryTime ? "until next round" : "remaining"}</span>
 </div>
 
 <style>
@@ -37,6 +38,30 @@
 		}
 		100% {
 			background-color: #f25205;
+		}
+	}
+
+	@media only screen and (max-width: 480px) {
+		.remainderContainer {
+			height: 30px;
+			background-color: transparent;
+			border: none;
+		}
+		.remainder {
+			font-size: 16px;
+			margin-right: 0;
+		}
+		.message {
+			display: none;
+		}
+
+		@keyframes blink {
+			0% {
+				color: #000;
+			}
+			100% {
+				color: #f25205;
+			}
 		}
 	}
 </style>
