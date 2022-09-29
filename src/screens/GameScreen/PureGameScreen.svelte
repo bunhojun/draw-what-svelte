@@ -3,7 +3,7 @@
 	import { SCREENS } from "../../constants/screens";
 	import MainGame from "./children/MainGameScreen/MainGameScreen.svelte";
 	import GalleryScreen from "./children/GalleryScreen/GalleryScreen.svelte";
-	import { CurrentScreen } from "./stores/stores";
+	import type { CurrentScreen } from "./stores/stores";
 
 	export let currentScreen: CurrentScreen;
 </script>

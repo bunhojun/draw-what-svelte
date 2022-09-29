@@ -1,14 +1,12 @@
 <script lang="ts">
 	import { RULE as defaultRule } from "../../../../constants/rule";
-	import { Interval, startCountdown } from "../../../../helpers/start-countdown";
+	import type { Interval } from "../../../../helpers/start-countdown";
+	import { startCountdown } from "../../../../helpers/start-countdown";
 	import { onDestroy, onMount } from "svelte";
 	import { Canvas } from "../../../../classes/canvas";
-	import {
-		Candidates,
-		ClassifierCallback,
-		classifyDrawing,
-	} from "../../../../helpers/classify-drawing";
-	import { CurrentSubject, GalleryItem } from "../../stores/stores";
+	import type { Candidates, ClassifierCallback } from "../../../../helpers/classify-drawing";
+	import { classifyDrawing } from "../../../../helpers/classify-drawing";
+	import type { CurrentSubject, GalleryItem } from "../../stores/stores";
 	import ScreenTemplate from "../../../../components/ScreenTemplate.svelte";
 	import GameInfoBox from "../../../../components/GameInfoBox.svelte";
 	import { TEST_ID } from "../../../../constants/test-id";

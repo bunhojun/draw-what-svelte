@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CurrentSubject, CurrentRound } from "../../stores/stores";
+	import type { CurrentSubject, CurrentRound } from "../../stores/stores";
 	import ScreenTemplate from "../../../../components/ScreenTemplate.svelte";
 	import { TEST_ID } from "../../../../constants/test-id";
 	import { RULE as defaultRule } from "../../../../constants/rule";
