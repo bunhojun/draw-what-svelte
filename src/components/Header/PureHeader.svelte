@@ -53,4 +53,16 @@
 		color: #000;
 		text-decoration: none;
 	}
+	@media only screen and (max-width: 480px) {
+		.header {
+			position: relative;
+		}
+		.roundIndicatorWrapper {
+			font-size: 15px;
+		}
+		.roundIndicator {
+			width: 20px;
+			height: 20px;
+		}
+	}
 </style>

@@ -14,9 +14,13 @@
 </script>
 
 <div class="gameInfo">
-	<MainGameRemainder {isSummaryTime} {remainder} />
+	{#if window.screen.width > 480}
+		<MainGameRemainder {isSummaryTime} {remainder} />
+	{/if}
 	<ScoreDisplay {candidates} {finalResult} {remainder} />
-	<Button onClick={() => canvas.clearCanvas()}>clear canvas</Button>
+	{#if window.screen.width > 480}
+		<Button onClick={() => canvas.clearCanvas()}>clear canvas</Button>
+	{/if}
 </div>
 
 <style>
@@ -24,5 +28,10 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+	}
+	@media only screen and (max-width: 480px) {
+		.gameInfo {
+			margin-top: 10px;
+		}
 	}
 </style>

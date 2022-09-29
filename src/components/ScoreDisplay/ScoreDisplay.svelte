@@ -52,4 +52,11 @@
 		display: flex;
 		justify-content: space-between;
 	}
+	@media only screen and (max-width: 480px) {
+		.scoreDisplay {
+			height: 100px;
+			width: 330px;
+			padding: 0 10px;
+		}
+	}
 </style>
