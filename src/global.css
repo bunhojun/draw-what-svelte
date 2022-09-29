@@ -6,6 +6,11 @@
 h1, body, ul, li {
   margin: 0;
 }
+
+html, body {
+  overflow: hidden;
+}
+
 ul {
   padding: 0;
 }
