@@ -9,7 +9,7 @@
 	class={`remainderContainer ${!isSummaryTime && remainder <= 5 && remainder !== 0 && "blinking"}`}
 	data-testid={TEST_ID.MainGameRemainderContainer}
 >
-	<span class="remainder">{remainder}</span> sec
+	<span class="remainder">{remainder}</span> sec{" "}
 	<span class="message">{isSummaryTime ? "until next round" : "remaining"}</span>
 </div>
 
