@@ -3,7 +3,8 @@
 	import { SCREENS } from "../../../../constants/screens";
 	import PureTransitionScreen from "./PureTransitionScreen.svelte";
 	import { getContext, onDestroy, onMount } from "svelte";
-	import { Interval, startCountdown } from "../../../../helpers/start-countdown";
+	import type { Interval } from "../../../../helpers/start-countdown";
+	import { startCountdown } from "../../../../helpers/start-countdown";
 
 	const RULE = getContext("RULE");
 	let currentRemainder = RULE.TRANSITION_DURATION;

@@ -1,11 +1,6 @@
 <script lang="ts">
-	import {
-		currentRound,
-		currentScreen,
-		currentSubject,
-		GalleryItem,
-		galleryItems,
-	} from "../../stores/stores";
+	import type { GalleryItem } from "../../stores/stores";
+	import { currentRound, currentScreen, currentSubject, galleryItems } from "../../stores/stores";
 	import { SCREENS } from "../../../../constants/screens";
 	import PureMainGameScreen from "./PureMainGameScreen.svelte";
 	import { getContext } from "svelte";
