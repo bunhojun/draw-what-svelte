@@ -2,13 +2,13 @@
 
 [Draw What?](https://draw-what-svelte.vercel.app/) is a drawing game powered by [ml5.js](https://ml5js.org/) and [The Quick, Draw! Dataset](https://github.com/googlecreativelab/quickdraw-dataset).
 
-You will draw some pictures on a canvas and AI will judge you on how well you do it.
+You draw some pictures on a canvas and AI judges your drawings.
 
 ## how to play
 
 You have 5 drawing subjects to draw. For each subject, you have 20 seconds to finish drawing it.
 
-At the end of each round, you get the score for each drawing given by AI.
+At the end of each round, you get the confidence score for each drawing given by AI.
 
 When you finish drawing all subjects, you will be given the final score, which is the avarage score of all drawings.
 
