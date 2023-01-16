@@ -11970,15 +11970,6 @@ loader-utils@^2.0.0:
     emojis-list "^3.0.0"
     json5 "^2.1.2"
 
-loader-utils@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-2.0.3.tgz#d4b15b8504c63d1fc3f2ade52d41bc8459d6ede1"
-  integrity sha512-THWqIsn8QRnvLl0shHYVBN9syumU8pYWEHPTmkiVGd+7K5eFNVSY6AJhRvgGF70gg1Dz+l/k8WicvFCxdEs60A==
-  dependencies:
-    big.js "^5.2.2"
-    emojis-list "^3.0.0"
-    json5 "^2.1.2"
-
 loader-utils@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-2.0.4.tgz#8b5cb38b5c34a9a018ee1fc0e6a066d1dfcc528c"
@@ -15432,12 +15423,12 @@ svelte-jester@2.3.2:
   resolved "https://registry.yarnpkg.com/svelte-jester/-/svelte-jester-2.3.2.tgz#9eb818da30807bbcc940b6130d15b2c34408d64f"
   integrity sha512-JtxSz4FWAaCRBXbPsh4LcDs4Ua7zdXgLC0TZvT1R56hRV0dymmNP+abw67DTPF7sQPyNxWsOKd0Sl7Q8SnP8kg==
 
-svelte-loader@3.1.4:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/svelte-loader/-/svelte-loader-3.1.4.tgz#69af360b816dddc11d2d0847dc1a91516a67974e"
-  integrity sha512-DtgVPb03UWhPW0GGlWx+1w6+LeCSnFijpX+4NCUNlRQjuzy8fcjBWaC+Q5cMCrk8JDB8YBqHt+SijDmAz1A/Ww==
+svelte-loader@3.1.5:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/svelte-loader/-/svelte-loader-3.1.5.tgz#ef0f1aed2b6f69e65b6c7ac6451480287c3f5455"
+  integrity sha512-H1PRX7oqtR5Ry1oMF+Rsco90/UHNevxkjuXkSfJKSB3Ff6vwPvr26ZymVJZwvUvOOODSv/uDapg60kwOJ35H9A==
   dependencies:
-    loader-utils "^2.0.3"
+    loader-utils "^2.0.4"
     svelte-dev-helper "^1.1.9"
     svelte-hmr "^0.14.2"
 
