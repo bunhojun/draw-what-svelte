@@ -3589,10 +3589,10 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-svelte-csf@2.0.10":
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-svelte-csf/-/addon-svelte-csf-2.0.10.tgz#8590b6a0f76a3479e0254aebbadc5b886aa30a76"
-  integrity sha512-0cmUBRuzyHUGOrgz/2eQNyRmWB262jFGyN1W7ZO1p7zUOJbtlNFK9LAuHzlsvcY0k6mzTXDSJuKl8e99jNQ6LA==
+"@storybook/addon-svelte-csf@2.0.11":
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-svelte-csf/-/addon-svelte-csf-2.0.11.tgz#5fcbab74690555cf4c7999757aedc93b7a6bd79d"
+  integrity sha512-sBOqZaXv60uWa0b7jubJ+FQ5JbckgvNsBw+ucd/s3304BeTKG4ZUel+yJEjpt0ebZqty8xWchBZev1htxBVD/Q==
   dependencies:
     ts-dedent "^2.0.0"
 
