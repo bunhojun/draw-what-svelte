@@ -15499,10 +15499,10 @@ svelte-jester@2.3.2:
   resolved "https://registry.yarnpkg.com/svelte-jester/-/svelte-jester-2.3.2.tgz#9eb818da30807bbcc940b6130d15b2c34408d64f"
   integrity sha512-JtxSz4FWAaCRBXbPsh4LcDs4Ua7zdXgLC0TZvT1R56hRV0dymmNP+abw67DTPF7sQPyNxWsOKd0Sl7Q8SnP8kg==
 
-svelte-loader@3.1.5:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/svelte-loader/-/svelte-loader-3.1.5.tgz#ef0f1aed2b6f69e65b6c7ac6451480287c3f5455"
-  integrity sha512-H1PRX7oqtR5Ry1oMF+Rsco90/UHNevxkjuXkSfJKSB3Ff6vwPvr26ZymVJZwvUvOOODSv/uDapg60kwOJ35H9A==
+svelte-loader@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/svelte-loader/-/svelte-loader-3.2.0.tgz#3a84b281ea629ae9d2567ae41a53f0770270e296"
+  integrity sha512-pxsNMC/1JHdQ63M0Zw5cS8dN299nvMiU2ze8yWPLlov/xBNXElEEM22so2q/vJDUyP0ZCrCVMV1d/tlWwxMRLA==
   dependencies:
     loader-utils "^2.0.4"
     svelte-dev-helper "^1.1.9"
